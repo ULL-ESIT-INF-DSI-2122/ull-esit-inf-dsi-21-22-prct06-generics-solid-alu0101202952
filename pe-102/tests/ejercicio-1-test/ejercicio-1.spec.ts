@@ -1,8 +1,10 @@
 import 'mocha';
 import {expect} from 'chai';
 import {Collectable} from '../../src/ejercicio-1/collectable';
+import {Printable} from '../../src/ejercicio-1/printable';
 
 const collection = new Collectable<number>([1, 2, 3]);
+const printable = new Printable<number>([1, 2, 4]);
 
 describe('Collectable', () => {
   it('collection.addItem() add an item', () => {
@@ -17,5 +19,13 @@ describe('Collectable', () => {
   it('collection.getNumberOfItems() get number of items in array', () => {
     return expect(collection.getNumberOfItems()).to.be.equal(3);
   })
+  
+});
+
+describe('Printable', () => {
+  it('printable.print() print an item', () => {
+      return expect(printable.print(4)).to.be.equal(undefined);
+  })
+  
   
 });
