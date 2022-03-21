@@ -13,7 +13,7 @@ describe('Collectable', () => {
   })
 
   it('collection.removeItem() remove an item', () => {
-    return expect(collection.removeItem(2)).to.be.equal(undefined);
+    return expect(collection.removeItem()).to.be.equal(4);
   })
   
 });

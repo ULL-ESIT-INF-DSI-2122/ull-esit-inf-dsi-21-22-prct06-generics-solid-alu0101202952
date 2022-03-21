@@ -6,6 +6,7 @@
 interface CollectableInterface<T> {
     addItem(nuevoValor: T): void;
     getItem(index: number): T;
+    removeItem(): void;
     //getNumberOfItems(): number;
 }
 
@@ -33,10 +34,10 @@ export class Collectable<T> implements CollectableInterface<T> {
       return this.items[indice];
     }
     
-    /*
-    removeItem(existItem: T) {
-        this.items.pop(existItem);
-    }*/
+    
+    public removeItem() {
+        return(this.items.pop());
+    }
     
     /**
      * Método public getNumberOfItems() numero de objetos del array
@@ -53,4 +54,5 @@ export class Collectable<T> implements CollectableInterface<T> {
 const collection = new Collectable<number>([1, 2, 3]);
 console.log(collection.addItem(4));
 console.log(collection.getItem(2));
+console.log(collection.removeItem());
 
