@@ -5,8 +5,8 @@ import { PrintableClass } from "./printable"
  * @class PrintableCollectionAbstract extiende de las clases CollectableClass y PrintableClass
  * @param items del tipo CollectableClass<T> o del tipo U PrintableClass<U>
  */
-export abstract class PrintableCollectionAbstract<T extends CollectableClass<T>, U extends PrintableClass<U>>{
-    constructor(protected items: (T | U)[]) {}
+export abstract class PrintableCollectionAbstract<T extends CollectableClass<T> | PrintableClass<T>>{
+    constructor(protected items: (T)[]) {}
 
     /**
      * Método público addItem()
@@ -22,8 +22,8 @@ export abstract class PrintableCollectionAbstract<T extends CollectableClass<T>,
 /**
  * @class PrintableCollection extiende de la clase abstracta genérica
  */
-export class PrintableCollection<T extends CollectableClass<T>, U extends PrintableClass<U>> extends PrintableCollectionAbstract<T, U>{
-    constructor(items: (T | U)[]) {
+export class PrintableCollection<T extends CollectableClass<T> | PrintableClass<T>> extends PrintableCollectionAbstract<T>{
+    constructor(items: (T)[]) {
         super(items)
     }
 
@@ -32,7 +32,7 @@ export class PrintableCollection<T extends CollectableClass<T>, U extends Printa
      * @param newItem 
      * @returns 
      */
-    public addItem(newItem: T|U) {
+    public addItem(newItem: T) {
         return(this.items.push(newItem));
       
     }
@@ -42,18 +42,19 @@ export class PrintableCollection<T extends CollectableClass<T>, U extends Printa
 /**
  * @class NumericPrintableCollection extiende de la clase abstracta PrintableCollectionAbstract
  */
-export class NumericPrintableCollection<T extends CollectableClass<T>, U extends PrintableClass<U>> extends PrintableCollectionAbstract<T, U>{
-    constructor(items: (T | U)[]) {
+export class NumericPrintableCollection<T extends CollectableClass<T> | PrintableClass<T>> extends PrintableCollectionAbstract<T>{
+    constructor(items: (T)[]) {
         super(items)
     }
 
     /**
-     * Método public addItem() añadir objeto
-     * @param newItem 
+     * Método public print() imprimir
      * @returns 
      */
-    public addItem(newItem: T|U) {
-        return(this.items.push(newItem));
+    public print() {
+        this.items.forEach((indice) => {
+            return(this.items+','+indice);
+        });
       
     }
     
