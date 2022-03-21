@@ -1,10 +1,10 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Collectable} from '../../src/ejercicio-1/collectable';
-import {Printable} from '../../src/ejercicio-1/printable';
+import {CollectableClass} from '../../src/ejercicio-1/collectable';
+import {PrintableClass} from '../../src/ejercicio-1/printable';
 
-const collection = new Collectable<number>([1, 2, 3]);
-const printable = new Printable<number>([1, 2, 4]);
+const collection = new CollectableClass<number>([1, 2, 3]);
+const printable = new PrintableClass<number>([1, 2, 4]);
 
 describe('Collectable', () => {
   it('collection.addItem() add an item', () => {
@@ -24,8 +24,7 @@ describe('Collectable', () => {
 
 describe('Printable', () => {
   it('printable.print() print an item', () => {
-      return expect(printable.print(4)).to.be.equal(undefined);
+      return expect(printable.print()).to.be.equal(undefined);
   })
-  
   
 });

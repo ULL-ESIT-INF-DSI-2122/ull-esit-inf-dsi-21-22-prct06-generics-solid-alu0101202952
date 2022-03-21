@@ -1,9 +1,9 @@
 /**
  * EJERCICIO PE-102
- * @interface CollectableInterface genérica tipo T
+ * @interface Collectable genérica tipo T
  * @method addItem() recibe el nuevo valor a añadir
  */
-interface CollectableInterface<T> {
+interface Collectable<T> {
     addItem(nuevoValor: T): void;
     getItem(index: number): T;
     removeItem(): void;
@@ -11,10 +11,10 @@ interface CollectableInterface<T> {
 }
 
 /**
- * @class Collectable que implementa la interfaz genérica CollectableInterface
+ * @class CollectableClass que implementa la interfaz genérica Collectable
  * @param items array de tipos genéricos de valores
  */
-export class Collectable<T> implements CollectableInterface<T> {
+export class CollectableClass<T> implements Collectable<T> {
     constructor(private items: T[]) {}
   
     /**
@@ -54,7 +54,7 @@ export class Collectable<T> implements CollectableInterface<T> {
 /**
  * Salida por pantalla
  */
-const collection = new Collectable<number>([1, 2, 3]);
+const collection = new CollectableClass<number>([1, 2, 3]);
 console.log(collection.addItem(4));
 console.log(collection.getItem(2));
 console.log(collection.removeItem());
