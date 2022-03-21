@@ -16,14 +16,23 @@ interface CollectableInterface<T> {
 export class Collectable<T> implements CollectableInterface<T> {
     constructor(private items: T[]) {}
   
+    /**
+     * Método public addItem() añade un valor al array
+     * @param newItem a añadir
+     */
     addItem(newItem: T) {
       this.items.push(newItem);
     }
-  /*
-    getItem(index: number) {
-      return this.items[index];
-    }
   
+    /**
+     * 
+     * @param indice 
+     * @returns 
+     */
+    getItem(indice: number) {
+      return this.items[indice];
+    }
+  /*
     removeItem(existItem: T) {
         this.items.pop(existItem);
     }*/
@@ -37,5 +46,6 @@ export class Collectable<T> implements CollectableInterface<T> {
  * Salida por pantalla
  */
 const collection = new Collectable<number>([1, 2, 3]);
-console.log(collection.addItem(4))
+console.log(collection.addItem(4));
+console.log(collection.getItem(2));
 

@@ -9,7 +9,7 @@ describe('Collectable', () => {
       return expect(collection.addItem(4)).to.be.equal(undefined);
   })
   it('collection.getItem() get an item', () => {
-    return expect(collection.getItem(2)).to.be.equal(undefined);
+    return expect(collection.getItem(2)).to.be.equal(3);
   })
   
 });
