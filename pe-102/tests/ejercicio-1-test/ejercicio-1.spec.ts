@@ -15,7 +15,7 @@ describe('Collectable', () => {
     return expect(collection.removeItem()).to.be.equal(4);
   })
   it('collection.getNumberOfItems() get number of items in array', () => {
-    return expect(collection.getNumberOfItems()).to.be.equal(undefined);
+    return expect(collection.getNumberOfItems()).to.be.equal(3);
   })
   
 });

@@ -7,7 +7,7 @@ interface CollectableInterface<T> {
     addItem(nuevoValor: T): void;
     getItem(index: number): T;
     removeItem(): void;
-    //getNumberOfItems(): number;
+    getNumberOfItems(): number;
 }
 
 /**
@@ -47,7 +47,7 @@ export class Collectable<T> implements CollectableInterface<T> {
      * @returns tamaño del array
      */
     public getNumberOfItems() {
-      return this.items.length;
+      return(this.items.length);
     }
 }
 
@@ -58,4 +58,4 @@ const collection = new Collectable<number>([1, 2, 3]);
 console.log(collection.addItem(4));
 console.log(collection.getItem(2));
 console.log(collection.removeItem());
-
+console.log(collection.getNumberOfItems());
