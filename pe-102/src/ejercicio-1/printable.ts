@@ -1,5 +1,5 @@
 /**
- * EJERCICIO 1 Printable
+ * EJERCICIO 1 PE-102 Printable
  * @interface Printable implementa el método print
  * @method print() imprime
  */

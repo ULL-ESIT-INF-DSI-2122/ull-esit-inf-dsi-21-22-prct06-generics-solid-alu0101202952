@@ -8,7 +8,8 @@ const collection = new CollectableClass<number>([1, 2, 3]);
 const printable = new PrintableClass<number>([1, 2, 4]);
 const printable2 = new PrintableClass<number>([4, 5, 6]);
 
-const printablecollection1 = new PrintableCollection<number>([printable, printable2]);
+
+const printablecollection1 = new PrintableCollection<number, number>([printable, printable2]);
 
 describe('Collectable', () => {
   it('collection.addItem() add an item', () => {
@@ -26,6 +27,7 @@ describe('Collectable', () => {
   
 });
 
+
 describe('Printable', () => {
   it('printable.print() print an item', () => {
       return expect(printable.print()).to.be.equal(undefined);
@@ -33,9 +35,10 @@ describe('Printable', () => {
   
 });
 
+
 describe('PrintableCollection', () => {
-  it('printablecollection1.print() print the collection', () => {
-      return expect(printablecollection1.print()).to.be.equal(undefined);
+  it('printablecollection1.addItem() addItem the collection', () => {
+      return expect(printablecollection1.addItem(5)).to.be.equal(undefined);
   })
   
 });
