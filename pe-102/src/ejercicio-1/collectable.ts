@@ -5,7 +5,7 @@
  */
 interface CollectableInterface<T> {
     addItem(nuevoValor: T): void;
-    //getItem(index: number): T;
+    getItem(index: number): T;
     //getNumberOfItems(): number;
 }
 
@@ -20,24 +20,29 @@ export class Collectable<T> implements CollectableInterface<T> {
      * Método public addItem() añade un valor al array
      * @param newItem a añadir
      */
-    addItem(newItem: T) {
+    public addItem(newItem: T) {
       this.items.push(newItem);
     }
   
     /**
-     * 
-     * @param indice 
-     * @returns 
+     * Método publico getItem() del indice que se indica
+     * @param indice 2 entonces posicion 2 del array
+     * @returns el valor del indice
      */
-    getItem(indice: number) {
+    public getItem(indice: number) {
       return this.items[indice];
     }
-  /*
+    
+    /*
     removeItem(existItem: T) {
         this.items.pop(existItem);
     }*/
     
-    getNumberOfItems() {
+    /**
+     * Método public getNumberOfItems() numero de objetos del array
+     * @returns tamaño del array
+     */
+    public getNumberOfItems() {
       return this.items.length;
     }
 }
