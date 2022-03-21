@@ -22,7 +22,7 @@ export class Collectable<T> implements CollectableInterface<T> {
      * @param newItem a añadir
      */
     public addItem(newItem: T) {
-      this.items.push(newItem);
+      return(this.items.push(newItem));
     }
   
     /**
@@ -34,7 +34,10 @@ export class Collectable<T> implements CollectableInterface<T> {
       return this.items[indice];
     }
     
-    
+    /**
+     * Método public removeItem() borra el último objeto del array
+     * @returns el valor borrado
+     */
     public removeItem() {
         return(this.items.pop());
     }
