@@ -1,3 +1,5 @@
+import { Fighter } from "./fighter";
+
 /**
  * EJERCICIO 1.
  * @class Pokemon, tiene las especificaciones correspondientes a los pokemon
@@ -7,7 +9,7 @@
  * @param tipo tiene el tipo de pokemon (string)
  * @param estadisticas tiene un array del ataque, defensa, velocidad y daño máximo del pokemon (number [])
  */
-export class Pokemon {
+export class Pokemon extends Fighter{
     protected estadisticas = {
         ataque: 0,
         defensa: 0, 
@@ -15,22 +17,15 @@ export class Pokemon {
         hp: 0,
     }
 
-    constructor(protected nombre: string, protected peso: number,
+    constructor(nombre: string, protected peso: number,
       protected altura: number, protected tipo: string, estadisticas: number []) {
+        super(nombre);
         this.estadisticas.ataque = estadisticas[0];
         this.estadisticas.defensa = estadisticas[1];
         this.estadisticas.velocidad = estadisticas[2];
         this.estadisticas.hp = estadisticas[3];
     }
     
-    /**
-     * Setter nombre del pokemon
-     * @param nombre del pokemon
-     */
-    public setNombre(nombre: string) {
-        this.nombre = nombre;
-    }
-
     /**
      * Getter del nombre del pokemon
      * @returns nombre del pokemon
@@ -144,23 +139,16 @@ export class Pokemon {
  * Salidas por pantalla
  */
 let pokemon1 = new Pokemon('Flareon', 25, 0.9, 'Fuego', [130, 60, 65, 65]);
-console.log(pokemon1);
-pokemon1.setNombre('Flareon (Eeveevolución)');
-console.log(pokemon1);
 console.log(pokemon1.getNombre());
 
 pokemon1.setPeso(27);
-console.log(pokemon1);
 console.log(pokemon1.getPeso());
 
 pokemon1.setAltura(0.7);
-console.log(pokemon1);
 console.log(pokemon1.getAltura());
 
 pokemon1.setTipo('Fuego(llama)');
-console.log(pokemon1);
 console.log(pokemon1.getTipo());
 
 pokemon1.setEstadisticas([131, 61, 66, 66]);
-console.log(pokemon1);
 console.log(pokemon1.getEstadisticas());
