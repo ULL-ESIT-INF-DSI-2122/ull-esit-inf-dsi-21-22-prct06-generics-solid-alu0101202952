@@ -2,7 +2,7 @@ import { Fighter } from "./fighter";
 
 /**
  * EJERCICIO 1.
- * @class Pokemon, tiene las especificaciones correspondientes a los pokemon
+ * @class Pokemon extiende de la clase abstracta Fighter, tiene las especificaciones correspondientes a los pokemon
  * @param nombre tiene el nombre del pokemon (string)
  * @param peso tiene el peso del pokemon, Kg (number)
  * @param altura tiene la altura del pokemon, m (number)
