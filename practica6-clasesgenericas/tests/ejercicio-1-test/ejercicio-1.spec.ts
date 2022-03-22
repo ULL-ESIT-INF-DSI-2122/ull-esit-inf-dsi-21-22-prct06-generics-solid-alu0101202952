@@ -1,10 +1,24 @@
 import 'mocha';
 import {expect} from 'chai';
+
+/**
+ * DUDAS TUTORÍA
+ * 1) Posibilidad de variar entre mundos Singleton cambie de un mundo a otro
+ * 2) Si mi esquema es correcto
+ * 3) Los personajes que luchan tienen que tener sus propios atributos y métodos que heredan de Fighter
+ * 4) Qué tiene Fighter, qué puede tener tengo el nombre y añado un type con el mundo
+ * 5) se hacen pruebas a una clase abstracta?
+ * 6) misma estructura se refiere a que haga un set en Pokedex con los distintos mundos
+ */
+
 //import {Fighter} from '../../src/ejercicio-1/fighter';
 import {Pokemon} from '../../src/ejercicio-1/pokemon';
+import {Marvel} from '../../src/ejercicio-1/marvel';
 
 let pokemon1 = new Pokemon('Flareon', 25, 0.9, 'Fuego', [130, 60, 65, 65]);
 let pokemon2 = new Pokemon('Leafeon', 25.5, 1, 'Hierba', [110, 130, 95, 65]);
+
+let marvel1 = new Marvel('Spiderman', 'Hombre araña', 'Mary Jane', []);
 
 describe('Pokemon', () => {
   it('pokemon1.getNombre() returns nombre del pokemon', () => {
