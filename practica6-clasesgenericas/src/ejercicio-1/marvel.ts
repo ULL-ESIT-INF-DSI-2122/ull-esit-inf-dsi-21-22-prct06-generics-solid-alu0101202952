@@ -1,5 +1,14 @@
 import { Fighter } from "./fighter";
 
+/**
+ * EJERCICIO 1.
+ * @class Marvel extiende de la clase abstracta Fighter, tiene las especificaciones correspondientes 
+ * a los personajes del mundo Marvel
+ * @param nombre tiene el nombre del superhéroe (string)
+ * @param superpoder tiene la habilidad del personaje (string)
+ * @param debilidad tiene la debilidad del personaje (string)
+ * @param estadisticas tiene un array del ataque, defensa, velocidad y daño máximo del personaje marvel (number [])
+ */
 export class Marvel extends Fighter{
     protected estadisticas = {
         ataque: 0,
@@ -15,8 +24,12 @@ export class Marvel extends Fighter{
         this.estadisticas.velocidad = estadisticas[2];
         this.estadisticas.hp = estadisticas[3];
     }
-    
-     public getNombre(){
+
+    /**
+     * Getter del nombre del superhéroe de Marvel
+     * @returns nombre del superhéroe
+     */
+    public getNombre(){
         return this.nombre;
     }
 }
