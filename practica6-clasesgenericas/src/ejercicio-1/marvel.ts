@@ -64,4 +64,30 @@ export class Marvel extends Fighter{
     public getDebilidad(){
         return this.debilidad;
     }
+
+    public setEstadisticas(estadisticas: number []) {
+        estadisticas.forEach(elemento => {
+            estadisticas.push(elemento);
+        })
+    }
+
+    public getEstadisticas(){
+        return this.estadisticas;
+    }
+
+    public getAtaque(){
+        return this.estadisticas.ataque;
+    }
+
+    public getDefensa(){
+        return this.estadisticas.defensa;
+    }
+
+    public getVelocidad(){
+        return this.estadisticas.velocidad;
+    }
+
+    public getHP(){
+        return this.estadisticas.hp;
+    }
 }
