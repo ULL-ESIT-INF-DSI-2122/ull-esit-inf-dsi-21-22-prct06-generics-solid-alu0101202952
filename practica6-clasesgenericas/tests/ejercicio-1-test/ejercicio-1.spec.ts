@@ -49,11 +49,11 @@ describe('Marvel', () => {
   it('marvel1.getNombre() returns nombre del personaje de Marvel', () => {
     return expect(marvel1.getNombre()).to.be.equal('Spiderman');
   })
-/*
-  it('pokemon1.getPeso() returns peso del pokemon', () => {
-    return expect(pokemon1.getPeso()).to.be.equal(25);
-  })
 
+  it('marvel1.getSuperPoder() returns superpoder el personaje de Marvel', () => {
+    return expect(marvel1.getSuperPoder()).to.be.equal('Hombre araña');
+  })
+/*
   it('pokemon1.getAltura() returns altura del pokemon', () => {
     return expect(pokemon1.getAltura()).to.be.equal(0.9);
   })
