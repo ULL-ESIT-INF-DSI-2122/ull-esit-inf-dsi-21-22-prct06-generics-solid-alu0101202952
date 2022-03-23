@@ -65,28 +65,52 @@ export class Marvel extends Fighter{
         return this.debilidad;
     }
 
+    /**
+     * Setter Estadísticas del superhéroe
+     * @param estadisticas del superhéroe
+     */
     public setEstadisticas(estadisticas: number []) {
         estadisticas.forEach(elemento => {
             estadisticas.push(elemento);
         })
     }
 
+    /**
+     * Getter de las estadísticas del superhéroe
+     * @returns estadisticas del superhéroe
+     */
     public getEstadisticas(){
         return this.estadisticas;
     }
 
+    /**
+     * Getter del ataque del superhéroe
+     * @returns ataque del superhéroe
+     */
     public getAtaque(){
         return this.estadisticas.ataque;
     }
 
+    /**
+     * Getter de ladefensa del superhéroe
+     * @returns defensa del superhéroe
+     */
     public getDefensa(){
         return this.estadisticas.defensa;
     }
 
+    /**
+     * Getter de la velocidad del superhéroe
+     * @returns velocidad del superhéroe
+     */
     public getVelocidad(){
         return this.estadisticas.velocidad;
     }
 
+    /**
+     * Getter del daño máximo del superhéroe
+     * @returns daño máximo del superhéroe
+     */
     public getHP(){
         return this.estadisticas.hp;
     }
