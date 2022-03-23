@@ -53,11 +53,11 @@ describe('Marvel', () => {
   it('marvel1.getSuperPoder() returns superpoder el personaje de Marvel', () => {
     return expect(marvel1.getSuperPoder()).to.be.equal('Hombre araña');
   })
-/*
-  it('pokemon1.getAltura() returns altura del pokemon', () => {
-    return expect(pokemon1.getAltura()).to.be.equal(0.9);
-  })
 
+  it('marvel1.getDebilidad() returns debilidad del personaje de Marvel', () => {
+    return expect(marvel1.getDebilidad()).to.be.equal('Mary Jane');
+  })
+/*
   it('pokemon1.getTipo() returns tipo del pokemon', () => {
     return expect(pokemon1.getTipo()).to.be.equal('Fuego');
   })
