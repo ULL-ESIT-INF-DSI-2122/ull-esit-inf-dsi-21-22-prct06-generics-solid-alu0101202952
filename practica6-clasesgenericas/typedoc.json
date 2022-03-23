@@ -1,7 +1,8 @@
 {
     "entryPoints": [
         "./src/ejercicio-1/fighter.ts",
-        "./src/ejercicio-1/pokemon.ts"
+        "./src/ejercicio-1/pokemon.ts",
+        "./src/ejercicio-1/marvel.ts"
     ],
     "out": "./docs"
 }
