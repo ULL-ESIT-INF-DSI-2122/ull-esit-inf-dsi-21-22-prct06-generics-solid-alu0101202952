@@ -48,4 +48,14 @@ export class Marvel extends Fighter{
     public getSuperPoder(){
         return this.superpoder;
     }
+
+    
+    public setDebilidad(debilidad: string) {
+        this.debilidad = debilidad;
+    }
+
+   
+    public getDebilidad(){
+        return this.debilidad;
+    }
 }
