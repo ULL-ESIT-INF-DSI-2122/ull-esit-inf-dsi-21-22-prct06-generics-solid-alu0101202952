@@ -32,4 +32,14 @@ export class Marvel extends Fighter{
     public getNombre(){
         return this.nombre;
     }
+
+
+    public setSuperPoder(superpoder: string) {
+        this.superpoder = superpoder;
+    }
+
+    
+    public getSuperPoder(){
+        return this.superpoder;
+    }
 }
