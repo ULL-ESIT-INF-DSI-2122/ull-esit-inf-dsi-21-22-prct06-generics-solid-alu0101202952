@@ -45,7 +45,57 @@ export class OnePiece extends Fighter{
      * Getter del nombre de la habilidad del pirata 
      * @returns nombre de la habilidad del pirata
      */
-     public getHabilidad(){
+    public getHabilidad(){
         return this.habilidad;
+    }
+
+    /**
+     * Setter Estadísticas del pirata
+     * @param estadisticas del pirata
+     */
+    public setEstadisticas(estadisticas: number []) {
+        estadisticas.forEach(elemento => {
+            estadisticas.push(elemento);
+        })
+    }
+
+    /**
+     * Getter de las estadísticas del pirata
+     * @returns estadisticas del pirata
+     */
+    public getEstadisticas(){
+        return this.estadisticas;
+    }
+
+    /**
+     * Getter del ataque del pirata
+     * @returns ataque del pirata
+     */
+    public getAtaque(){
+        return this.estadisticas.ataque;
+    }
+
+    /**
+     * Getter de ladefensa del pirata
+     * @returns defensa del pirata
+     */
+    public getDefensa(){
+        return this.estadisticas.defensa;
+    }
+
+    /**
+     * Getter de la velocidad del pirata
+     * @returns velocidad del pirata
+     */
+    public getVelocidad(){
+        return this.estadisticas.velocidad;
+    }
+
+    /**
+     * Getter del daño máximo del pirata
+     * @returns daño máximo del pirata
+     */
+    public getHP(){
+        return this.estadisticas.hp;
     }
 }
