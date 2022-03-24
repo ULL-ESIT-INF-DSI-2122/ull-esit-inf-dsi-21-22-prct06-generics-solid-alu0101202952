@@ -5,17 +5,18 @@ import { OnePiece } from "./onepiece";
 
 /**
  * EJERCICIO 1.
- * @class Combat, tiene las especificaciones del combate entre ambos pokemons
- * @param pokemon1 tiene las características del pokemon 1 (tuyo)
- * @param pokemon2 tiene las características del pokemon 2 (rival)
+ * @class Combat, tiene las especificaciones del combate entre luchadores de los mundos de Pokemon | Marvel | KimetsuNoYaiba | OnePiece
+ * @param luchador1 tiene las características del luchador1 (tuyo)
+ * @param luchador2 tiene las características del luchador2
+ *  (rival)
  */
 export class Combat {
-    constructor(private pokemon1: Pokemon, private pokemon2: Pokemon){
+    constructor(private luchador1: Pokemon | Marvel | KimetsuNoYaiba | OnePiece, private luchador2: Pokemon | Marvel | KimetsuNoYaiba | OnePiece){
     }
 
     /**
-     * Método público que inicializa el combate pokemon
-     * @returns el daño que se inflige en el combate
+     * Método público que inicializa el combate entre luchadores del mismo y distinto mundo
+     * @returns el daño que se inflige en el combate entre luchadores del mismo y distinto mundo
      */
     public start(){
         let efectividad1: number = 1;
