@@ -85,11 +85,11 @@ describe('Kimetsu', () => {
   it('zenitsu.getNombre() returns nombre del personaje de Kimetsu No Yaiba', () => {
     return expect(zenitsu.getNombre()).to.be.equal('Zenitsu');
   })
-/*
-  it('marvel1.getSuperPoder() returns superpoder el personaje de Marvel', () => {
-    return expect(marvel1.getSuperPoder()).to.be.equal('Hombre araña');
-  })
 
+  it('zenitsu.getRespiracion() returns superpoder(respiracion de un elemento) el personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getRespiracion()).to.be.equal('Rayo');
+  })
+/*
   it('marvel1.getDebilidad() returns debilidad del personaje de Marvel', () => {
     return expect(marvel1.getDebilidad()).to.be.equal('Mary Jane');
   })
