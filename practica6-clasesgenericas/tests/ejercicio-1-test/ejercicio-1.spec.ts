@@ -117,6 +117,9 @@ describe('One Piece', () => {
   it('luffy.getNombre() returns nombre del personaje de One Piece', () => {
     return expect(luffy.getNombre()).to.be.equal('Monkey D. Luffy');
   })
+  it('luffy.getFruta() returns nombre de la fruta del diablo si tiene alguno de los personajes de One Piece', () => {
+    return expect(luffy.getFruta()).to.be.equal('Paramecia');
+  })
   /*
   it('luffy.getNombre() returns nombre del personaje de Kimetsu No Yaiba', () => {
     return expect(luffy.getNombre()).to.be.equal('Zenitsu');
