@@ -32,4 +32,12 @@ export class OnePiece extends Fighter{
     public getNombre(){
         return this.nombre;
     }
+
+    /**
+     * Getter del nombre de la fruta que le otorga las habilidades del pirata 
+     * @returns nombre de la fruta que le otorga las habilidades del pirata
+     */
+     public getFruta(){
+        return this.fruta;
+    }
 }
