@@ -2,12 +2,17 @@ import 'mocha';
 import {expect} from 'chai';
 import {Pokemon} from '../../src/ejercicio-1/pokemon';
 import {Marvel} from '../../src/ejercicio-1/marvel';
+import {KimetsuNoYaiba} from '../../src/ejercicio-1/kimetsu';
 
 let pokemon1 = new Pokemon('Flareon', 25, 0.9, 'Fuego', [130, 60, 65, 65]);
 let pokemon2 = new Pokemon('Leafeon', 25.5, 1, 'Hierba', [110, 130, 95, 65]);
 
 let marvel1 = new Marvel('Spiderman', 'Hombre araña', 'Mary Jane', [85, 65, 120, 70]);
 let marvel2 = new Marvel('Superman', 'Super fuerza', 'Criptonita', [75, 95, 113, 75]);
+
+let tanjiro = new KimetsuNoYaiba('Tanjiro', 'Agua', [115, 90, 60, 95]);
+let zenitsu = new KimetsuNoYaiba('Zenitsu', 'Rayo', [112, 75, 143, 88]);
+let inosuke = new KimetsuNoYaiba('Inosuke', 'Bestia', [100, 135, 45, 45])
 
 describe('Pokemon', () => {
   it('pokemon1.getNombre() returns nombre del pokemon', () => {
@@ -74,4 +79,35 @@ describe('Marvel', () => {
   it('marvel1.getHP() returns HP del personaje de Marvel', () => {
     return expect(marvel1.getHP()).to.be.eql(70);
   })
+});
+
+describe('Kimetsu', () => {
+  it('zenitsu.getNombre() returns nombre del personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getNombre()).to.be.equal('Zenitsu');
+  })
+/*
+  it('marvel1.getSuperPoder() returns superpoder el personaje de Marvel', () => {
+    return expect(marvel1.getSuperPoder()).to.be.equal('Hombre araña');
+  })
+
+  it('marvel1.getDebilidad() returns debilidad del personaje de Marvel', () => {
+    return expect(marvel1.getDebilidad()).to.be.equal('Mary Jane');
+  })
+
+  it('marvel1.getEstadisticas() returns estadísticas del personaje de Marvel', () => {
+    return expect(marvel1.getEstadisticas()).to.be.eql({ ataque: 85, defensa: 65, velocidad: 120, hp: 70});
+  })
+
+  it('marvel1.getAtaque() returns ataque del personaje de Marvel', () => {
+    return expect(marvel1.getAtaque()).to.be.eql(85);
+  })
+  it('marvel1.getDefensa() returns defensa del personaje de Marvel', () => {
+    return expect(marvel1.getDefensa()).to.be.eql(65);
+  })
+  it('marvel1.getVelocidad() returns velocidad del personaje de Marvel', () => {
+    return expect(marvel1.getVelocidad()).to.be.eql(120);
+  })
+  it('marvel1.getHP() returns HP del personaje de Marvel', () => {
+    return expect(marvel1.getHP()).to.be.eql(70);
+  })*/
 });
