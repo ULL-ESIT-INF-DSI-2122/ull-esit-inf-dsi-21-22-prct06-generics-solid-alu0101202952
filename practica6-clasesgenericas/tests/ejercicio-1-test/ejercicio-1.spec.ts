@@ -123,29 +123,21 @@ describe('One Piece', () => {
   it('luffy.getHabilidad() returns nombre de la habilidad de los personajes de One Piece', () => {
     return expect(luffy.getHabilidad()).to.be.equal('Goma');
   })
-  /*
-  it('luffy.getNombre() returns nombre del personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getNombre()).to.be.equal('Zenitsu');
+  
+  it('luffy.getEstadisticas() returns estadísticas del personaje de One Piece', () => {
+    return expect(luffy.getEstadisticas()).to.be.eql({ ataque: 120, defensa: 100, velocidad: 90, hp: 100});
   })
 
-  it('luffy.getRespiracion() returns superpoder(respiracion de un elemento) el personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getRespiracion()).to.be.equal('Rayo');
+  it('luffy.getAtaque() returns ataque del personaje de One Piece', () => {
+    return expect(luffy.getAtaque()).to.be.eql(120);
   })
-
-  it('luffy.getEstadisticas() returns estadísticas del personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getEstadisticas()).to.be.eql({ ataque: 112, defensa: 75, velocidad: 143, hp: 88});
+  it('luffy.getDefensa() returns defensa del personaje de One Piece', () => {
+    return expect(luffy.getDefensa()).to.be.eql(100);
   })
-
-  it('luffy.getAtaque() returns ataque del personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getAtaque()).to.be.eql(112);
+  it('luffy.getVelocidad() returns velocidad del personaje de One Piece', () => {
+    return expect(luffy.getVelocidad()).to.be.eql(90);
   })
-  it('luffy.getDefensa() returns defensa del personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getDefensa()).to.be.eql(75);
+  it('luffy.getHP() returns HP del personaje de One Piece', () => {
+    return expect(luffy.getHP()).to.be.eql(100);
   })
-  it('luffy.getVelocidad() returns velocidad del personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getVelocidad()).to.be.eql(143);
-  })
-  it('luffy.getHP() returns HP del personaje de Kimetsu No Yaiba', () => {
-    return expect(luffy.getHP()).to.be.eql(88);
-  })*/
 });
