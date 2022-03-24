@@ -37,7 +37,15 @@ export class OnePiece extends Fighter{
      * Getter del nombre de la fruta que le otorga las habilidades del pirata 
      * @returns nombre de la fruta que le otorga las habilidades del pirata
      */
-     public getFruta(){
+    public getFruta(){
         return this.fruta;
+    }
+
+    /**
+     * Getter del nombre de la habilidad del pirata 
+     * @returns nombre de la habilidad del pirata
+     */
+     public getHabilidad(){
+        return this.habilidad;
     }
 }
