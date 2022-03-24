@@ -32,6 +32,10 @@ export class KimetsuNoYaiba extends Fighter{
         return this.nombre;
     }
 
+    /**
+     * Getter del poder(respiración) del cazador de demonios
+     * @returns respiración del cazador de demonios
+     */
     public getRespiracion(){
         return this.respiracion;
     }
