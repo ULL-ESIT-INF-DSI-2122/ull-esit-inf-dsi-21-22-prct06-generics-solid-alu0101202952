@@ -89,25 +89,21 @@ describe('Kimetsu', () => {
   it('zenitsu.getRespiracion() returns superpoder(respiracion de un elemento) el personaje de Kimetsu No Yaiba', () => {
     return expect(zenitsu.getRespiracion()).to.be.equal('Rayo');
   })
-/*
-  it('marvel1.getDebilidad() returns debilidad del personaje de Marvel', () => {
-    return expect(marvel1.getDebilidad()).to.be.equal('Mary Jane');
+
+  it('zenitsu.getEstadisticas() returns estadísticas del personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getEstadisticas()).to.be.eql({ ataque: 112, defensa: 75, velocidad: 143, hp: 88});
   })
 
-  it('marvel1.getEstadisticas() returns estadísticas del personaje de Marvel', () => {
-    return expect(marvel1.getEstadisticas()).to.be.eql({ ataque: 85, defensa: 65, velocidad: 120, hp: 70});
+  it('zenitsu.getAtaque() returns ataque del personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getAtaque()).to.be.eql(112);
   })
-
-  it('marvel1.getAtaque() returns ataque del personaje de Marvel', () => {
-    return expect(marvel1.getAtaque()).to.be.eql(85);
+  it('zenitsu.getDefensa() returns defensa del personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getDefensa()).to.be.eql(75);
   })
-  it('marvel1.getDefensa() returns defensa del personaje de Marvel', () => {
-    return expect(marvel1.getDefensa()).to.be.eql(65);
+  it('zenitsu.getVelocidad() returns velocidad del personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getVelocidad()).to.be.eql(143);
   })
-  it('marvel1.getVelocidad() returns velocidad del personaje de Marvel', () => {
-    return expect(marvel1.getVelocidad()).to.be.eql(120);
+  it('zenitsu.getHP() returns HP del personaje de Kimetsu No Yaiba', () => {
+    return expect(zenitsu.getHP()).to.be.eql(88);
   })
-  it('marvel1.getHP() returns HP del personaje de Marvel', () => {
-    return expect(marvel1.getHP()).to.be.eql(70);
-  })*/
 });
