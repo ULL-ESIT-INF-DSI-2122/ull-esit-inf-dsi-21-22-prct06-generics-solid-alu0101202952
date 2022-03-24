@@ -4,6 +4,7 @@ import {Pokemon} from '../../src/ejercicio-1/pokemon';
 import {Marvel} from '../../src/ejercicio-1/marvel';
 import {KimetsuNoYaiba} from '../../src/ejercicio-1/kimetsu';
 import {OnePiece} from '../../src/ejercicio-1/onepiece';
+import {Combat} from '../../src/ejercicio-1/combat';
 
 let pokemon1 = new Pokemon('Flareon', 25, 0.9, 'Fuego', [130, 60, 65, 65]);
 let pokemon2 = new Pokemon('Leafeon', 25.5, 1, 'Hierba', [110, 130, 95, 65]);
@@ -18,6 +19,14 @@ let inosuke = new KimetsuNoYaiba('Inosuke', 'Bestia', [100, 135, 45, 45]);
 let luffy = new OnePiece('Monkey D. Luffy', 'Paramecia', 'Goma', [120, 100, 90, 100]);
 let sanji = new OnePiece('Sanji', 'Ninguna', 'Patadas', [95, 67, 122, 72]);
 let choper = new OnePiece('Choper', 'Zoan', 'Reno', [84, 78, 100, 78]);
+
+let combate1 = new Combat(pokemon1, pokemon2);
+let combate2 = new Combat(pokemon2, marvel1);
+let combate3 = new Combat(marvel2, inosuke);
+let combate4 = new Combat(tanjiro, sanji);
+let combate5 = new Combat(luffy, choper);
+let combate6 = new Combat(marvel1, marvel2);
+let combate7 = new Combat(tanjiro, zenitsu);
 
 describe('Pokemon', () => {
   it('pokemon1.getNombre() returns nombre del pokemon', () => {
@@ -140,4 +149,11 @@ describe('One Piece', () => {
   it('luffy.getHP() returns HP del personaje de One Piece', () => {
     return expect(luffy.getHP()).to.be.eql(100);
   })
+});
+
+describe('Combat, simula los combates', () => {
+  it('combate1.start() returns combate entre pokemon1 y pokemon2 (mismo mundo Pokemon)', () => {
+    return expect(combate1.start()).to.be.eql(100);
+  })
+  
 });

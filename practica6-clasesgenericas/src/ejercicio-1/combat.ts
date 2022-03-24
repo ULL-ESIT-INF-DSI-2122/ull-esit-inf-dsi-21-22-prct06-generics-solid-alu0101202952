@@ -1,4 +1,7 @@
 import { Pokemon } from "./pokemon";
+import { Marvel } from "./marvel";
+import { KimetsuNoYaiba } from "./kimetsu";
+import { OnePiece } from "./onepiece";
 
 /**
  * EJERCICIO 1.
