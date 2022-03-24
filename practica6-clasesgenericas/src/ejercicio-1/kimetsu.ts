@@ -31,4 +31,8 @@ export class KimetsuNoYaiba extends Fighter{
     public getNombre(){
         return this.nombre;
     }
+
+    public getRespiracion(){
+        return this.respiracion;
+    }
 }
