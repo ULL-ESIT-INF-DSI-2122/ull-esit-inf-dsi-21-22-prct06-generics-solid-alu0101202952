@@ -1,4 +1,3 @@
-//type MundoType = 'Pokemon' | 'Marvel' | 'KimetsuNoYaia' | 'MarioBros'
 /**
  * EJERCICIO 1: EL COMBATE DEFINITIVO
  * @abstractclass Fighter permite que un contendiente pueda luchar
