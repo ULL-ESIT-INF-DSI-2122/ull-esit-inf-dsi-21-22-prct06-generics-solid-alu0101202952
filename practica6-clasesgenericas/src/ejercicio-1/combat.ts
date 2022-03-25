@@ -2,12 +2,12 @@ import { Fighter } from "./fighter";
 /**
  * EJERCICIO 1.
  * @class Combat, tiene las especificaciones del combate entre luchadores de los mundos de Pokemon | Marvel | KimetsuNoYaiba | OnePiece (Fighter)
- * @param luchador1 tiene las características del luchador1 (tuyo)
- * @param luchador2 tiene las características del luchador2
+ * @param contendiente1 tiene las características del contendiente1 (tuyo)
+ * @param contendiente2 tiene las características del contendiente2
  *  (rival)
  */
 export class Combat {
-    constructor(private luchador1: Fighter, private luchador2: Fighter){
+    constructor(private contendiente1: Fighter, private contendiente2: Fighter){
     }
 
     /**
@@ -19,20 +19,24 @@ export class Combat {
         let efectividad2: number = 1;
         let daño_pokemon1: number = 0;
         let daño_pokemon2: number = 0;
+        console.log('\nInicio del combate!!\n');
 
-        if (this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Agua" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Agua") {
-            efectividad1 = efectividad1 * 2;
-            efectividad2 = efectividad2 * 0.5;
-        } else if (this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Agua" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Eléctrico") {
-            efectividad1 = efectividad1 * 0.5;
-            efectividad2 = efectividad2 * 2;
-        } else if (this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Eléctrico" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Eléctrico") {
-            efectividad1 = efectividad1 * 1;
-            efectividad2 = efectividad2 * 1;
-        } else {
-            efectividad1 = efectividad1 * 0.5;
-            efectividad2 = efectividad2 * 0.5;
+        if(this.contendiente1.getVelocidad() > this.contendiente2.getVelocidad()){
+            if (this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Agua" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Agua") {
+                efectividad1 = efectividad1 * 2;
+                efectividad2 = efectividad2 * 0.5;
+            } else if (this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Agua" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Eléctrico") {
+                efectividad1 = efectividad1 * 0.5;
+                efectividad2 = efectividad2 * 2;
+            } else if (this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Eléctrico" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Eléctrico") {
+                efectividad1 = efectividad1 * 1;
+                efectividad2 = efectividad2 * 1;
+            } else {
+                efectividad1 = efectividad1 * 0.5;
+                efectividad2 = efectividad2 * 0.5;
+            }
         }
+        
 
    
         daño_pokemon1 = 50 * (this.pokemon1.getAtaque() / this.pokemon2.getDefensa()) * efectividad1;

@@ -1,8 +1,10 @@
+type MundoType = 'Pokemon' | 'Marvel' | 'KimetsuNoYaiba' | 'OnePiece';
 /**
  * EJERCICIO 1: EL COMBATE DEFINITIVO
  * @abstractclass Fighter permite que un contendiente pueda luchar
  * @param nombre del luchador
- * @param mundo del que pertenece el luchador
+ * @param estadisticas del luchador
+ * @param mundo del luchador (type Mundo al que pertenece)
  */
 export abstract class Fighter {
     protected estadisticas = {
@@ -11,7 +13,7 @@ export abstract class Fighter {
         velocidad: 0,
         hp: 0,
     }
-    constructor(protected nombre: string, estadisticas: number []) {
+    constructor(protected nombre: string, estadisticas: number [], protected mundo: MundoType) {
         this.estadisticas.ataque = estadisticas[0];
         this.estadisticas.defensa = estadisticas[1];
         this.estadisticas.velocidad = estadisticas[2];
