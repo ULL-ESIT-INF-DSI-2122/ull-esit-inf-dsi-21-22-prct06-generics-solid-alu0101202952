@@ -10,36 +10,10 @@ import { Fighter } from "./fighter";
  * @param estadisticas tiene un array del ataque, defensa, velocidad y daño máximo del pokemon (number [])
  */
 export class Pokemon extends Fighter{
-    protected estadisticas = {
-        ataque: 0,
-        defensa: 0, 
-        velocidad: 0,
-        hp: 0,
-    }
 
     constructor(nombre: string, protected peso: number,
       protected altura: number, protected tipo: string, estadisticas: number []) {
-        super(nombre);
-        this.estadisticas.ataque = estadisticas[0];
-        this.estadisticas.defensa = estadisticas[1];
-        this.estadisticas.velocidad = estadisticas[2];
-        this.estadisticas.hp = estadisticas[3];
-    }
-    
-    /**
-     * Getter del nombre del pokemon
-     * @returns nombre del pokemon
-     */
-    public getNombre(){
-        return this.nombre;
-    }
-
-    /**
-     * Setter peso del pokemon
-     * @param peso del pokemon
-     */
-    public setPeso(peso: number) {
-        this.peso = peso;
+        super(nombre, estadisticas);
     }
 
     /**
@@ -51,27 +25,11 @@ export class Pokemon extends Fighter{
     }
 
     /**
-     * Setter altura del pokemon
-     * @param altura del pokemon
-     */
-    public setAltura(altura: number) {
-        this.altura = altura;
-    }
-
-    /**
      * Getter de la altura del pokemon
      * @returns altura del pokemon
      */
     public getAltura(){
         return this.altura;
-    }
-
-    /**
-     * Setter tipo del pokemon
-     * @param tipo del pokemon
-     */
-    public setTipo(tipo: string) {
-        this.tipo = tipo;
     }
 
     /**
@@ -82,56 +40,6 @@ export class Pokemon extends Fighter{
         return this.tipo;
     }
 
-    /**
-     * Setter Estadísticas del pokemon
-     * @param estadisticas del pokemon
-     */
-    public setEstadisticas(estadisticas: number []) {
-        estadisticas.forEach(elemento => {
-            estadisticas.push(elemento);
-        })
-    }
-
-    /**
-     * Getter de las estadísticas del pokemon
-     * @returns estadisticas del pokemon
-     */
-    public getEstadisticas(){
-        return this.estadisticas;
-    }
-
-    /**
-     * Getter del ataque del pokemon
-     * @returns ataque del pokemon
-     */
-    public getAtaque(){
-        return this.estadisticas.ataque;
-    }
-
-    /**
-     * Getter de ladefensa del pokemon
-     * @returns defensa del pokemon
-     */
-    public getDefensa(){
-        return this.estadisticas.defensa;
-    }
-
-    /**
-     * Getter de la velocidad del pokemon
-     * @returns velocidad del pokemon
-     */
-    public getVelocidad(){
-        return this.estadisticas.velocidad;
-    }
-
-    /**
-     * Getter del daño máximo del pokemon
-     * @returns daño máximo del pokemon
-     */
-    public getHP(){
-        return this.estadisticas.hp;
-    }
-
 }
 
 
@@ -139,16 +47,7 @@ export class Pokemon extends Fighter{
  * Salidas por pantalla
  */
 let pokemon1 = new Pokemon('Flareon', 25, 0.9, 'Fuego', [130, 60, 65, 65]);
-console.log(pokemon1.getNombre());
-
-pokemon1.setPeso(27);
 console.log(pokemon1.getPeso());
-
-pokemon1.setAltura(0.7);
 console.log(pokemon1.getAltura());
-
-pokemon1.setTipo('Fuego(llama)');
 console.log(pokemon1.getTipo());
-
-pokemon1.setEstadisticas([131, 61, 66, 66]);
 console.log(pokemon1.getEstadisticas());

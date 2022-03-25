@@ -29,10 +29,6 @@ let combate6 = new Combat(marvel1, marvel2);
 let combate7 = new Combat(tanjiro, zenitsu);
 
 describe('Pokemon', () => {
-  it('pokemon1.getNombre() returns nombre del pokemon', () => {
-    return expect(pokemon1.getNombre()).to.be.equal('Flareon');
-  })
-
   it('pokemon1.getPeso() returns peso del pokemon', () => {
     return expect(pokemon1.getPeso()).to.be.equal(25);
   })
@@ -65,10 +61,6 @@ describe('Pokemon', () => {
 
 
 describe('Marvel', () => {
-  it('marvel1.getNombre() returns nombre del personaje de Marvel', () => {
-    return expect(marvel1.getNombre()).to.be.equal('Spiderman');
-  })
-
   it('marvel1.getSuperPoder() returns superpoder el personaje de Marvel', () => {
     return expect(marvel1.getSuperPoder()).to.be.equal('Hombre araña');
   })
@@ -96,10 +88,6 @@ describe('Marvel', () => {
 });
 
 describe('Kimetsu', () => {
-  it('zenitsu.getNombre() returns nombre del personaje de Kimetsu No Yaiba', () => {
-    return expect(zenitsu.getNombre()).to.be.equal('Zenitsu');
-  })
-
   it('zenitsu.getRespiracion() returns superpoder(respiracion de un elemento) el personaje de Kimetsu No Yaiba', () => {
     return expect(zenitsu.getRespiracion()).to.be.equal('Rayo');
   })
@@ -123,9 +111,6 @@ describe('Kimetsu', () => {
 });
 
 describe('One Piece', () => {
-  it('luffy.getNombre() returns nombre del personaje de One Piece', () => {
-    return expect(luffy.getNombre()).to.be.equal('Monkey D. Luffy');
-  })
   it('luffy.getFruta() returns nombre de la fruta del diablo si tiene alguno de los personajes de One Piece', () => {
     return expect(luffy.getFruta()).to.be.equal('Paramecia');
   })
@@ -150,10 +135,10 @@ describe('One Piece', () => {
     return expect(luffy.getHP()).to.be.eql(100);
   })
 });
-
+/*
 describe('Combat, simula los combates', () => {
   it('combate1.start() returns combate entre pokemon1 y pokemon2 (mismo mundo Pokemon)', () => {
     return expect(combate1.start()).to.be.eql(100);
   })
   
-});
+});*/

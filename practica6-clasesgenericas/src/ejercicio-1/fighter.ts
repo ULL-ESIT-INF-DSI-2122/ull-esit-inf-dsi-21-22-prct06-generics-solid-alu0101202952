@@ -5,7 +5,18 @@
  * @param mundo del que pertenece el luchador
  */
 export abstract class Fighter {
-    constructor(protected readonly nombre: string) {}
+    protected estadisticas = {
+        ataque: 0,
+        defensa: 0, 
+        velocidad: 0,
+        hp: 0,
+    }
+    constructor(protected nombre: string, estadisticas: number []) {
+        this.estadisticas.ataque = estadisticas[0];
+        this.estadisticas.defensa = estadisticas[1];
+        this.estadisticas.velocidad = estadisticas[2];
+        this.estadisticas.hp = estadisticas[3];
+    }
 
     /**
      * Getter del nombre del luchador
@@ -15,4 +26,43 @@ export abstract class Fighter {
         return this.nombre;
     }
 
+    /**
+     * Getter de las estadísticas del cazador de demonios
+     * @returns estadisticas del cazador de demonios
+     */
+     public getEstadisticas(){
+        return this.estadisticas;
+    }
+
+    /**
+     * Getter del ataque del cazador de demonios
+     * @returns ataque del cazador de demonios
+     */
+    public getAtaque(){
+        return this.estadisticas.ataque;
+    }
+
+    /**
+     * Getter de ladefensa del cazador de demonios
+     * @returns defensa del cazador de demonios
+     */
+    public getDefensa(){
+        return this.estadisticas.defensa;
+    }
+
+    /**
+     * Getter de la velocidad del cazador de demonios
+     * @returns velocidad del cazador de demonios
+     */
+    public getVelocidad(){
+        return this.estadisticas.velocidad;
+    }
+
+    /**
+     * Getter del daño máximo del cazador de demonios
+     * @returns daño máximo del cazador de demonios
+     */
+    public getHP(){
+        return this.estadisticas.hp;
+    }
 }
