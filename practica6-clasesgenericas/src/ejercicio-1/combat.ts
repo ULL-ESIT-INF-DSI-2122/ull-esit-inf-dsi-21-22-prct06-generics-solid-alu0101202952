@@ -1,4 +1,5 @@
 import { Fighter } from "./fighter";
+import { Pokemon } from "./pokemon";
 /**
  * EJERCICIO 1.
  * @class Combat, tiene las especificaciones del combate entre luchadores de los mundos de Pokemon | Marvel | KimetsuNoYaiba | OnePiece (Fighter)
@@ -22,19 +23,25 @@ export class Combat {
         console.log('\nInicio del combate!!\n');
 
         if(this.contendiente1.getVelocidad() > this.contendiente2.getVelocidad()){
-            if (this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Agua" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Agua") {
-                efectividad1 = efectividad1 * 2;
-                efectividad2 = efectividad2 * 0.5;
-            } else if (this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Agua" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Agua" && this.pokemon2.getTipo() == "Eléctrico") {
-                efectividad1 = efectividad1 * 0.5;
-                efectividad2 = efectividad2 * 2;
-            } else if (this.pokemon1.getTipo() == "Hierba" && this.pokemon2.getTipo() == "Eléctrico" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Hierba" || this.pokemon1.getTipo() == "Eléctrico" && this.pokemon2.getTipo() == "Fuego" || this.pokemon1.getTipo() == "Fuego" && this.pokemon2.getTipo() == "Eléctrico") {
-                efectividad1 = efectividad1 * 1;
-                efectividad2 = efectividad2 * 1;
-            } else {
-                efectividad1 = efectividad1 * 0.5;
-                efectividad2 = efectividad2 * 0.5;
+            while (this.contendiente1.getHP() > 0 || this.contendiente2.getHP() > 0){
+                if(this.contendiente1 instanceof Pokemon && this.contendiente2 instanceof Pokemon){
+                    if (this.contendiente1.getTipo() == "Fuego" && this.contendiente2.getTipo() == "Hierba" || this.contendiente1.getTipo() == "Agua" && this.contendiente2.getTipo() == "Fuego" || this.contendiente1.getTipo() == "Hierba" && this.contendiente2.getTipo() == "Agua" || this.contendiente1.getTipo() == "Eléctrico" && this.contendiente2.getTipo() == "Agua") {
+                        efectividad1 = efectividad1 * 2;
+                        efectividad2 = efectividad2 * 0.5;
+                    } else if (this.contendiente1.getTipo() == "Hierba" && this.contendiente2.getTipo() == "Fuego" || this.contendiente1.getTipo() == "Fuego" && this.contendiente2.getTipo() == "Agua" || this.contendiente1.getTipo() == "Agua" && this.contendiente2.getTipo() == "Hierba" || this.contendiente1.getTipo() == "Agua" && this.contendiente2.getTipo() == "Eléctrico") {
+                        efectividad1 = efectividad1 * 0.5;
+                        efectividad2 = efectividad2 * 2;
+                    } else if (this.contendiente1.getTipo() == "Hierba" && this.contendiente2.getTipo() == "Eléctrico" || this.contendiente1.getTipo() == "Eléctrico" && this.contendiente2.getTipo() == "Hierba" || this.contendiente1.getTipo() == "Eléctrico" && this.contendiente2.getTipo() == "Fuego" || this.contendiente1.getTipo() == "Fuego" && this.contendiente2.getTipo() == "Eléctrico") {
+                        efectividad1 = efectividad1 * 1;
+                        efectividad2 = efectividad2 * 1;
+                    } else {
+                        efectividad1 = efectividad1 * 0.5;
+                        efectividad2 = efectividad2 * 0.5;
+                    }
+                }
+                
             }
+            
         }
         
 

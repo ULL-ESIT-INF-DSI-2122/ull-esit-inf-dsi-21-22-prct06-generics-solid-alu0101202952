@@ -13,7 +13,7 @@ export abstract class Fighter {
         velocidad: 0,
         hp: 0,
     }
-    constructor(protected nombre: string, estadisticas: number [], protected mundo: MundoType) {
+    constructor(protected nombre: string, protected mundo: MundoType,estadisticas: number []) {
         this.estadisticas.ataque = estadisticas[0];
         this.estadisticas.defensa = estadisticas[1];
         this.estadisticas.velocidad = estadisticas[2];
@@ -26,6 +26,27 @@ export abstract class Fighter {
      */
     public getNombreLuchador(){
         return this.nombre;
+    }
+
+    /**
+     * Getter del nombre del mundo del luchador
+     * @returns nombre del mundo del luchador
+     */
+    public getMundo(){
+        return this.mundo;
+    }
+
+    /**
+     * Retorna si es o no del mismo mundo
+     * @returns true si es del mismo mundo los personajes
+     * @returns false si no lo son
+     */
+    public isMismoMundo(mundo1: MundoType, mundo2: MundoType){
+        if(mundo1 == mundo2){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
