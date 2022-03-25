@@ -1,17 +1,13 @@
-import { Pokemon } from "./pokemon";
-import { Marvel } from "./marvel";
-import { KimetsuNoYaiba } from "./kimetsu";
-import { OnePiece } from "./onepiece";
-
+import { Fighter } from "./fighter";
 /**
  * EJERCICIO 1.
- * @class Combat, tiene las especificaciones del combate entre luchadores de los mundos de Pokemon | Marvel | KimetsuNoYaiba | OnePiece
+ * @class Combat, tiene las especificaciones del combate entre luchadores de los mundos de Pokemon | Marvel | KimetsuNoYaiba | OnePiece (Fighter)
  * @param luchador1 tiene las características del luchador1 (tuyo)
  * @param luchador2 tiene las características del luchador2
  *  (rival)
  */
 export class Combat {
-    constructor(private luchador1: Pokemon | Marvel | KimetsuNoYaiba | OnePiece, private luchador2: Pokemon | Marvel | KimetsuNoYaiba | OnePiece){
+    constructor(private luchador1: Fighter, private luchador2: Fighter){
     }
 
     /**
