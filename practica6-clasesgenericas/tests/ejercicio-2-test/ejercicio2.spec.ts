@@ -5,6 +5,7 @@ import {Peliculas} from '../../src/ejercicio-2/peliculas';
 import {Documentales} from '../../src/ejercicio-2/documentales';
 import {ColeccionSeries} from '../../src/ejercicio-2/coleccionseries';
 import {ColeccionPeliculas} from '../../src/ejercicio-2/coleccionpeliculas';
+import {ColeccionDocumentales} from '../../src/ejercicio-2/colecciondocumentales';
 
 let serie1 = new Series('Juego de Tronos', 'George R. R. Martin', ['Aventura', 'Drama', 'Fantasía', 'Medieval'], 1996);
 let serie2 = new Series('Vikingos', 'Michael Hirst', ['Histórico', 'Drama', 'Fantasía', 'Acción'], 2013);
@@ -18,7 +19,8 @@ let documental1 = new Documentales('Los zorros', 'National Geographic España', 
 let documental2 = new Documentales('Viaje al centro de la tele', 'Pedro Santos Movellán', ['Música'], 2013);
 
 let coleccionseries = new ColeccionSeries([serie1, serie2, serie3]);
-let coleccionpeliculas= new ColeccionPeliculas([pelicula1, pelicula2, pelicula3]);
+let coleccionpeliculas = new ColeccionPeliculas([pelicula1, pelicula2, pelicula3]);
+let colecciondocumentales = new ColeccionDocumentales([documental1, documental2])
 
 describe('Series', () => {
   it('serie1.getNombre() returns nombre de la serie', () => {
@@ -89,5 +91,17 @@ describe('Colección de peliculas de la plataforma', () => {
   })
   it('coleccionpeliculas.getVideoByAuthor() returns pelicula encontrada por el director', () => {
     return expect(coleccionpeliculas.getVideoByAuthor('James L. Brooks')).to.be.eql(undefined);
+  })
+})
+
+describe('Colección de documentales de la plataforma', () => {
+  it('colecciondocumentales.getVideoByName() returns documental encontrada por el nombre', () => {
+    return expect(colecciondocumentales.getVideoByName('Los zorros')).to.be.eql(undefined);
+  })
+  it('colecciondocumentales.getVideoByYear() returns documental encontrada por el año', () => {
+    return expect(colecciondocumentales.getVideoByYear(2017)).to.be.eql(undefined);
+  })
+  it('colecciondocumentales.getVideoByAuthor() returns documental encontrada por el director', () => {
+    return expect(colecciondocumentales.getVideoByAuthor('Pedro Santos Movellán')).to.be.eql(undefined);
   })
 })
