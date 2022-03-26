@@ -73,4 +73,7 @@ describe('Colección de series de la plataforma', () => {
   it('coleccionseries.getVideoByYear() returns serie encontrada por el año', () => {
     return expect(coleccionseries.getVideoByYear(2018)).to.be.eql(undefined);
   })
+  it('coleccionseries.getVideoByAuthor() returns serie encontrada por el autor', () => {
+    return expect(coleccionseries.getVideoByAuthor('George R. R. Martin')).to.be.eql(undefined);
+  })
 })
