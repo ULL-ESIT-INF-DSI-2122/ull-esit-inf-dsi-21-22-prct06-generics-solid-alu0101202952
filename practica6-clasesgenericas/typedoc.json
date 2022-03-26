@@ -10,7 +10,8 @@
         "./src/ejercicio-1/pokedexprinter.ts",
         "./src/ejercicio-2/streamable.ts",
         "./src/ejercicio-2/basicstreamablecollection.ts",
-        "./src/ejercicio-2/series.ts"
+        "./src/ejercicio-2/series.ts",
+        "./src/ejercicio-2/peliculas.ts"
     ],
     "out": "./docs"
 }
