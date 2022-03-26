@@ -13,7 +13,7 @@ let pelicula2 = new Peliculas('La fuerza del cariño', 'James L. Brooks', ['Shir
 let pelicula3 = new Peliculas('Asesinato en el Orient Express', 'Kenneth Branagh', ['Kenneth Branagh'], ['Policiaca', 'Misterio'], 2017);
 
 let documental1 = new Documentales('Los zorros', 'National Geographic España', ['Naturaleza'], 2017);
-let documental2 = new Documentales('Viaje al centro de la tele', 'Pedro Santos Movellán', ['Música', 2013]);
+let documental2 = new Documentales('Viaje al centro de la tele', 'Pedro Santos Movellán', ['Música'], 2013);
 
 describe('Series', () => {
   it('serie1.getNombre() returns nombre de la serie', () => {
