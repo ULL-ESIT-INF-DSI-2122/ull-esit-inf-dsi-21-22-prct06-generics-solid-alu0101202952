@@ -4,6 +4,7 @@ import {Series} from '../../src/ejercicio-2/series';
 import {Peliculas} from '../../src/ejercicio-2/peliculas';
 import {Documentales} from '../../src/ejercicio-2/documentales';
 import {ColeccionSeries} from '../../src/ejercicio-2/coleccionseries';
+import {ColeccionPeliculas} from '../../src/ejercicio-2/coleccionpeliculas';
 
 let serie1 = new Series('Juego de Tronos', 'George R. R. Martin', ['Aventura', 'Drama', 'Fantasía', 'Medieval'], 1996);
 let serie2 = new Series('Vikingos', 'Michael Hirst', ['Histórico', 'Drama', 'Fantasía', 'Acción'], 2013);
@@ -17,6 +18,7 @@ let documental1 = new Documentales('Los zorros', 'National Geographic España', 
 let documental2 = new Documentales('Viaje al centro de la tele', 'Pedro Santos Movellán', ['Música'], 2013);
 
 let coleccionseries = new ColeccionSeries([serie1, serie2, serie3]);
+let coleccionpeliculas= new ColeccionPeliculas([pelicula1, pelicula2, pelicula3]);
 
 describe('Series', () => {
   it('serie1.getNombre() returns nombre de la serie', () => {
@@ -76,7 +78,16 @@ describe('Colección de series de la plataforma', () => {
   it('coleccionseries.getVideoByAuthor() returns serie encontrada por el autor', () => {
     return expect(coleccionseries.getVideoByAuthor('George R. R. Martin')).to.be.eql(undefined);
   })
-  it('coleccionseries.eliminateVideoByName() returns serie eliminando la serie que no se desea', () => {
-    return expect(coleccionseries.eliminateVideoByName('Fugitiva')).to.be.eql(undefined);
+})
+
+describe('Colección de peliculas de la plataforma', () => {
+  it('coleccionpeliculas.getVideoByName() returns pelicula encontrada por el nombre', () => {
+    return expect(coleccionpeliculas.getVideoByName('Asesinato en el Orient Express')).to.be.eql(undefined);
+  })
+  it('coleccionpeliculas.getVideoByYear() returns pelicula encontrada por el año', () => {
+    return expect(coleccionpeliculas.getVideoByYear(1997)).to.be.eql(undefined);
+  })
+  it('coleccionpeliculas.getVideoByAuthor() returns pelicula encontrada por el director', () => {
+    return expect(coleccionpeliculas.getVideoByAuthor('James L. Brooks')).to.be.eql(undefined);
   })
 })

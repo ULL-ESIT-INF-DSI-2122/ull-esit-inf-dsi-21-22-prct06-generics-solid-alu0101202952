@@ -62,9 +62,6 @@ export class ColeccionSeries extends BasicStreamableCollection<Series>{
         return resultado;
     }
 
-    public eliminateVideoByName(nombre: string){
-
-    } 
 }
 
 let serie1 = new Series('Juego de Tronos', 'George R. R. Martin', ['Aventura', 'Drama', 'Fantasía', 'Medieval'], 1996);
@@ -75,3 +72,5 @@ let coleccionseries = new ColeccionSeries([serie1, serie2, serie3]);
 coleccionseries.getVideoByName('Fugitiva');
 coleccionseries.getVideoByYear(2013);
 coleccionseries.getVideoByAuthor('George R. R. Martin');
+
+console.log(coleccionseries);

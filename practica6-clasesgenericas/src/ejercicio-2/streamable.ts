@@ -8,7 +8,6 @@
  */
 export interface Streamable<T>{
     addVideo(video: T): void;
-    eliminateVideoByName(nombre: string): void;
     getVideoByName(nombre: string): T[] | void;
     getVideoByYear(anio: number): T[] | void;
     getVideoByAuthor(autor: string): T[] | void;

@@ -13,7 +13,8 @@
         "./src/ejercicio-2/series.ts",
         "./src/ejercicio-2/peliculas.ts",
         "./src/ejercicio-2/documentales.ts",
-        "./src/ejercicio-2/coleccionseries.ts"
+        "./src/ejercicio-2/coleccionseries.ts",
+        "./src/ejercicio-2/coleccionpeliculas.ts"
     ],
     "out": "./docs"
 }

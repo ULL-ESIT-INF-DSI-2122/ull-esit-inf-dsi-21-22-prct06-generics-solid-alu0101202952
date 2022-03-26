@@ -44,10 +44,5 @@ export abstract class BasicStreamableCollection<T> implements Streamable<T>{
      */
     abstract getVideoByAuthor(autor: string): T[] | void;
 
-    /**
-     * Método abstracto elimina el video al realizar la búsqueda por su nombre
-     * @param nombre del video (string)
-     */
-    abstract eliminateVideoByName(nombre: string): void;
 }
 
