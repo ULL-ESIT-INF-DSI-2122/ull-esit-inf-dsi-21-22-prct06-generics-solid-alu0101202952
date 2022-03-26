@@ -1,11 +1,21 @@
 import { BasicStreamableCollection } from "./basicstreamablecollection";
 import { Series } from "./series";
 
+/**
+ * EJERCICIO 2: DXIFlix
+ * @class ColeccionSeries extiende de BasicStreamableCollection<Series> especializado en series
+ * @param videos tipo Series que tiene todas las series de la plataforma
+ */
 export class ColeccionSeries extends BasicStreamableCollection<Series>{
     constructor(protected videos: Series[]){
         super(videos);
     }
 
+    /**
+     * Getter Serie por el nombre
+     * @param nombre de la serie a encontrar
+     * @returns la serie si existe o una sentencia porque no la encontró
+     */
     public getVideoByName(nombre: string){
         let resultado: Series []= [];
         for(let i: number = 0; i < this.videos.length; i++) {

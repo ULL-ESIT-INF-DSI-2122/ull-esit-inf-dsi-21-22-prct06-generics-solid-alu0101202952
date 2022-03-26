@@ -68,7 +68,9 @@ describe('Documentales', () => {
 
 describe('Colección de series de la plataforma', () => {
   it('coleccionseries.getVideoByName() returns serie encontrada por el nombre', () => {
-    return expect(coleccionseries.getVideoByName('Vikingos')).to.be.eql(serie2);
+    return expect(coleccionseries.getVideoByName('Vikingos')).to.be.eql(undefined);
   })
-
+  it('coleccionseries.getVideoByYear() returns serie encontrada por el año', () => {
+    return expect(coleccionseries.getVideoByYear(2018)).to.be.eql(undefined);
+  })
 })
