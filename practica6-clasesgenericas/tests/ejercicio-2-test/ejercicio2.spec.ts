@@ -76,4 +76,7 @@ describe('Colección de series de la plataforma', () => {
   it('coleccionseries.getVideoByAuthor() returns serie encontrada por el autor', () => {
     return expect(coleccionseries.getVideoByAuthor('George R. R. Martin')).to.be.eql(undefined);
   })
+  it('coleccionseries.eliminateVideoByName() returns serie eliminando la serie que no se desea', () => {
+    return expect(coleccionseries.eliminateVideoByName('Fugitiva')).to.be.eql(undefined);
+  })
 })
