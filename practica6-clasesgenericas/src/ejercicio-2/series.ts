@@ -21,7 +21,18 @@ export class Series{
      * Getter del nombre del autor de la serie
      * @returns nombre del autor de la serie
      */
-     public getAutor(){
+    public getAutor(){
         return this.autor;
+    }
+
+    /**
+     * Getter del género/s de la serie
+     * @returns género/s de la serie
+     */
+    public getGenero(){
+        for(let i: number = 0; i < this.generos.length; i++) {
+            return this.generos;
+        }
+        return -1;
     }
 }
