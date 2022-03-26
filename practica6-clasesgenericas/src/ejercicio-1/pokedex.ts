@@ -1,6 +1,5 @@
 import { Fighter } from "./fighter";
 
-
 /**
  * EJERCICIO 1.
  * @class Pokedex, tiene los luchadores

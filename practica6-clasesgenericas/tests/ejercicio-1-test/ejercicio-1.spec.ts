@@ -6,7 +6,6 @@ import {KimetsuNoYaiba} from '../../src/ejercicio-1/kimetsu';
 import {OnePiece} from '../../src/ejercicio-1/onepiece';
 import {Combat} from '../../src/ejercicio-1/combat';
 import {Pokedex} from '../../src/ejercicio-1/pokedex';
-import {PokedexPrinter} from '../../src/ejercicio-1/pokedexprinter';
 
 let pokemon1 = new Pokemon('Flareon', 25, 0.9, 'Fuego', [130, 60, 65, 65]);
 let pokemon2 = new Pokemon('Leafeon', 25.5, 1, 'Hierba', [110, 130, 95, 65]);
@@ -31,7 +30,6 @@ let combate6 = new Combat(marvel1, marvel2);
 let combate7 = new Combat(tanjiro, zenitsu);
 
 let pokedex = new Pokedex([pokemon1, marvel2, zenitsu, luffy, sanji]);
-let pokedex2 = new PokedexPrinter(pokedex);
 
 describe('Pokemon', () => {
   it('pokemon1.getPeso() returns peso del pokemon', () => {
@@ -174,11 +172,5 @@ describe('Pokedex, tiene las especificaciones de cada luchador', () => {
   })
   it('pokedex.getNumeroLuchadores() returns número de luchadores', () => {
     return expect(pokedex.getNumeroLuchadores()).to.be.eql(5);
-  })
-});
-
-describe('PokedexPrinter, tiene la muestra de los luchadores en la Pokedex', () => {
-  it('pokedex2.print() returns los luchadores de la pokedex', () => {
-    return expect(pokedex2.print()).to.be.eql(undefined);
   })
 });

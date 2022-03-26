@@ -6,7 +6,8 @@
         "./src/ejercicio-1/kimetsu.ts",
         "./src/ejercicio-1/onepiece.ts",
         "./src/ejercicio-1/combat.ts",
-        "./src/ejercicio-1/pokedex.ts"
+        "./src/ejercicio-1/pokedex.ts",
+        "./src/ejercicio-1/pokedexprinter.ts"
     ],
     "out": "./docs"
 }
