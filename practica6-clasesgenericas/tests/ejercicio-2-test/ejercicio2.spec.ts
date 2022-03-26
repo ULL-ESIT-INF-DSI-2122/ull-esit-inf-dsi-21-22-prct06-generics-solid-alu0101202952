@@ -13,4 +13,7 @@ describe('Series', () => {
   it('serie1.getAutor() returns nombre del autor de la serie', () => {
     return expect(serie1.getAutor()).to.be.equal('George R. R. Martin');
   })
+  it('serie1.getGenero() returns género/s de la serie', () => {
+    return expect(serie1.getGenero()).to.be.eql(['Aventura', 'Drama', 'Fantasía', 'Medieval']);
+  })
 })
