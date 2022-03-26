@@ -11,9 +11,17 @@ export class Series{
 
     /**
      * Getter del nombre de la serie
-     * @returns 
+     * @returns nombre de la serie
      */
     public getNombre(){
         return this.nombre;
+    }
+
+    /**
+     * Getter del nombre del autor de la serie
+     * @returns nombre del autor de la serie
+     */
+     public getAutor(){
+        return this.autor;
     }
 }
