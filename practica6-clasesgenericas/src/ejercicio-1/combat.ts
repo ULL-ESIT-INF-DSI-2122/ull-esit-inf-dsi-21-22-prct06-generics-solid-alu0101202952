@@ -20,15 +20,15 @@ export class Combat {
      */
     public getPhrase(contendiente: Fighter){
         if(contendiente instanceof Pokemon){
-            console.log('Grrrraaawr');
+            return(console.log('Grrrraaawr'));
         } if(contendiente instanceof Marvel){
-            console.log('Traeré la paz al mundo!');
+            return(console.log('Traeré la paz al mundo!'));
         } if(contendiente instanceof KimetsuNoYaiba){
-            console.log('Acabaré contigo de manera llamativa!!');
+            return(console.log('Acabaré contigo de manera llamativa!!'));
         } if(contendiente instanceof OnePiece){  // Mundo OnePiece
-            console.log('Por el Rey de los piratas!!')
+            return(console.log('Por el Rey de los piratas!!'));
         } else {
-            console.log('')
+            return(console.log(''));
         }
     }
 

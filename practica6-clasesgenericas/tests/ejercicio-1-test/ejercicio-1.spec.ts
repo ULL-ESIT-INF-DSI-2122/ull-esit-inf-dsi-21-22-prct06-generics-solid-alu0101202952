@@ -135,10 +135,30 @@ describe('One Piece', () => {
     return expect(luffy.getHP()).to.be.eql(100);
   })
 });
-/*
+
 describe('Combat, simula los combates', () => {
-  it('combate1.start() returns combate entre pokemon1 y pokemon2 (mismo mundo Pokemon)', () => {
-    return expect(combate1.start()).to.be.eql(100);
+  it('combate1.getPhrase() returns frase del contrincante', () => {
+    return expect(combate1.getPhrase(sanji)).to.be.equal(undefined);
   })
-  
-});*/
+  it('combate1.start() returns combate entre pokemon1 y pokemon2 (mismo mundo Pokemon)', () => {
+    return expect(combate1.start()).to.be.eql([ +0, 19 ]);
+  })
+  it('combate2.start() returns combate entre pokemon2 y marvel1 (distinto mundo Pokemon y Marvel)', () => {
+    return expect(combate2.start()).to.be.eql([+0, 37 ]);
+  })
+  it('combate3.start() returns combate entre marvel2 y inosuke (distinto mundo Marvel y Kimetsu No Yaiba)', () => {
+    return expect(combate3.start()).to.be.eql([47, +0]);
+  })
+  it('combate4.start() returns combate entre tanjiro y sanji (distinto mundo Kimetsu No Yaiba y One Piece)', () => {
+    return expect(combate4.start()).to.be.eql([ 9, 19 ]);
+  })
+  it('combate5.start() returns combate entre luffy y choper (mismo mundo One Piece)', () => {
+    return expect(combate5.start()).to.be.eql([ 23, 36 ]);
+  })
+  it('combate6.start() returns combate entre marvel1 y marvel2 (mismo mundo Marvel)', () => {
+    return expect(combate6.start()).to.be.eql([ 25, 17 ]);
+  })
+  it('combate7.start() returns combate entre tanjiro y zenitsu (mismo mundo Kimetsu No Yaiba)', () => {
+    return expect(combate7.start()).to.be.eql([ 18, 26 ]);
+  })
+});
