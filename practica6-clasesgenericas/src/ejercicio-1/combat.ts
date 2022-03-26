@@ -1,4 +1,6 @@
 import { Fighter } from "./fighter";
+import { KimetsuNoYaiba } from "./kimetsu";
+import { Marvel } from "./marvel";
 import { Pokemon } from "./pokemon";
 /**
  * EJERCICIO 1.
@@ -8,10 +10,21 @@ import { Pokemon } from "./pokemon";
  *  (rival)
  */
 export class Combat {
-    constructor(private contendiente1: Fighter, private contendiente2: Fighter, private catching_phrase: Fighter){
+    constructor(private contendiente1: Fighter, private contendiente2: Fighter){
     }
 
+    public getPhrase(contendiente: Fighter){
+        if(contendiente instanceof Pokemon){
+            console.log('Grrrraaawr');
+        } if(contendiente instanceof Marvel){
+            console.log('Traeré la paz al mundo!');
+        } if(contendiente instanceof KimetsuNoYaiba){
+            console.log('Acabaré contigo de manera llamativa!!');
+        } else{  // Mundo OnePiece
+            console.log('Por el Rey de los piratas!!')
+        }
     
+    }
 
     /**
      * Método público que inicializa el combate entre luchadores del mismo y distinto mundo
@@ -51,6 +64,10 @@ export class Combat {
                     daño2 = Math.round(daño2);
         
                     console.log('El tipo de tu pokemon es: '+this.contendiente1.getTipo()+'\nContra un pokemon oponente del tipo: '+this.contendiente2.getTipo()+'\nTu ataque es: '+this.contendiente1.getAtaque()+'\nContra la defensa de tu rival: '+this.contendiente2.getDefensa());
+
+                    console.log('\nLos luchadores tienen algo que decir...\n');
+                    console.log('Luchador 1: '+this.getPhrase(this.contendiente1));
+                    console.log('\nLuchador2: '+this.getPhrase(this.contendiente2));
 
                 } else { //Son de otros mundos o mismo mundo pero NO mismo mundo Pokemon, se rige por quien ataca antes
                     daño1 = 50 * (this.contendiente1.getAtaque() / this.contendiente2.getDefensa()) * efectividad1;
