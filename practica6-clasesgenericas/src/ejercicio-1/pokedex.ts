@@ -1,33 +1,29 @@
-import { Pokemon } from "./pokemon";
+import { Fighter } from "./fighter";
+
 
 /**
  * EJERCICIO 1.
- * @class Pokedex, tiene los pokemons
- * @param pokemons tiene el array con los pokemon que lo componen
+ * @class Pokedex, tiene los luchadores
+ * @param luchador tiene el array con los luchadores que lo componen
  */
 export class Pokedex{
-    constructor(private pokemons: Pokemon [] = []) {
+    constructor(private luchadores: Fighter [] = []) {
     }
 
     /**
-     * Setter de añadir pokemons a la Pokedex
-     * @param nombre del pokemon
+     * Getter de los luchadores de la Pokedex
+     * @returns los luchadores
      */
-    public setPokemons(nombre: Pokemon){
-        for (let i: number = 0; i < this.pokemons.length; i++) {
-            this.pokemons.push(nombre);
-        }
+    public getLuchadores(indice: number){
+        return this.luchadores[indice];
     }
 
     /**
-     * Getter de los pokemons de la Pokedex
-     * @returns los pokemons
+     * Getter de cuantos luchadores hay en la Pokedex
+     * @returns el número de luchadores
      */
-    public getPokemons(){
-        this.pokemons.forEach(pokemon => {
-            console.log(pokemon);
-        });
-        return this.pokemons
+    public getNumeroLuchadores(){
+        return this.luchadores.length;
     }
 }
 
