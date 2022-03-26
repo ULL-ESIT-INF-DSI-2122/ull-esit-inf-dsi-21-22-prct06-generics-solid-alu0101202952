@@ -28,8 +28,21 @@ export class ColeccionSeries extends BasicStreamableCollection<Series>{
         return resultado;
     }
 
+    /**
+     * Getter Serie por el año
+     * @param anio de la serie a encontrar
+     * @returns la serie si existe o una sentencia porque no la encontró
+     */
     public getVideoByYear(anio: number){
-
+        let resultado: Series []= [];
+        for(let i: number = 0; i < this.videos.length; i++) {
+            if(this.videos[i].getAnio() == anio){
+                resultado.push(this.videos[i]);
+            } else{
+                return console.log('Serie no encontrada');
+            }
+        }
+        return resultado;
     }
 
     public getVideoByAuthor(autor: string){
