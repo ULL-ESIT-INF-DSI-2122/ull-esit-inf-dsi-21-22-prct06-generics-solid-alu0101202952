@@ -8,7 +8,8 @@
         "./src/ejercicio-1/combat.ts",
         "./src/ejercicio-1/pokedex.ts",
         "./src/ejercicio-1/pokedexprinter.ts",
-        "./src/ejercicio-2/streamable.ts"
+        "./src/ejercicio-2/streamable.ts",
+        "./src/ejercicio-2/basicstreamablecollection.ts"
     ],
     "out": "./docs"
 }
