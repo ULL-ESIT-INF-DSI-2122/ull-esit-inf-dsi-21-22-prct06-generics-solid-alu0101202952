@@ -45,8 +45,21 @@ export class ColeccionSeries extends BasicStreamableCollection<Series>{
         return resultado;
     }
 
+    /**
+     * Getter Serie por el autor
+     * @param autor de la serie a encontrar
+     * @returns la serie si existe o una sentencia porque no la encontró
+     */
     public getVideoByAuthor(autor: string){
-
+        let resultado: Series []= [];
+        for(let i: number = 0; i < this.videos.length; i++) {
+            if(this.videos[i].getAutor() == autor){
+                resultado.push(this.videos[i]);
+            } else{
+                return console.log('Serie no encontrada');
+            }
+        }
+        return resultado;
     }
 
     public eliminateVideoByName(nombre: string){
@@ -60,3 +73,5 @@ let serie3 = new Series('Fugitiva', 'Joaquín Oristrell', ['Thriller'], 2018);
 let coleccionseries = new ColeccionSeries([serie1, serie2, serie3]);
 
 coleccionseries.getVideoByName('Fugitiva');
+coleccionseries.getVideoByYear(2013);
+coleccionseries.getVideoByAuthor('George R. R. Martin');
