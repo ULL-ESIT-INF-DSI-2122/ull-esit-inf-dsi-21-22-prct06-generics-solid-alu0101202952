@@ -16,4 +16,7 @@ describe('Series', () => {
   it('serie1.getGenero() returns género/s de la serie', () => {
     return expect(serie1.getGenero()).to.be.eql(['Aventura', 'Drama', 'Fantasía', 'Medieval']);
   })
+  it('serie1.getAnio() returns año de la serie', () => {
+    return expect(serie1.getAnio()).to.be.equal(1996);
+  })
 })
