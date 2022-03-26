@@ -20,7 +20,7 @@ let documental2 = new Documentales('Viaje al centro de la tele', 'Pedro Santos M
 
 let coleccionseries = new ColeccionSeries([serie1, serie2, serie3]);
 let coleccionpeliculas = new ColeccionPeliculas([pelicula1, pelicula2, pelicula3]);
-let colecciondocumentales = new ColeccionDocumentales([documental1, documental2])
+let colecciondocumentales = new ColeccionDocumentales([documental1, documental2]);
 
 describe('Series', () => {
   it('serie1.getNombre() returns nombre de la serie', () => {
