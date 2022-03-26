@@ -4,7 +4,8 @@
         "./src/ejercicio-1/pokemon.ts",
         "./src/ejercicio-1/marvel.ts",
         "./src/ejercicio-1/kimetsu.ts",
-        "./src/ejercicio-1/onepiece.ts"
+        "./src/ejercicio-1/onepiece.ts",
+        "./src/ejercicio-1/combat.ts"
     ],
     "out": "./docs"
 }

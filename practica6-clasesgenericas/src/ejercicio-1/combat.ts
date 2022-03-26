@@ -13,6 +13,10 @@ export class Combat {
     constructor(private contendiente1: Fighter, private contendiente2: Fighter){
     }
 
+    /**
+     * Getter de la frase del luchador dependiendo del mundo
+     * @param contendiente que dice la frase
+     */
     public getPhrase(contendiente: Fighter){
         if(contendiente instanceof Pokemon){
             console.log('Grrrraaawr');
