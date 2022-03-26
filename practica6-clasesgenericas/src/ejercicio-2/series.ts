@@ -35,4 +35,12 @@ export class Series{
         }
         return -1;
     }
+
+    /**
+     * Getter del año de la serie
+     * @returns año de la serie
+     */
+    public getAnio(){
+        return this.anio;
+    }
 }
