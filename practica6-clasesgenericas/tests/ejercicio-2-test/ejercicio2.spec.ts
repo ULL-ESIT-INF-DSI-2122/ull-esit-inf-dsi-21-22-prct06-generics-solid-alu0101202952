@@ -1,4 +1,4 @@
-/*import 'mocha';
+import 'mocha';
 import {expect} from 'chai';
 import {Series} from '../../src/ejercicio-1/series';
 
@@ -8,4 +8,4 @@ describe('Series', () => {
     it('serie1.getNombre() returns nombre del pokemon', () => {
       return expect(serie1.getNombre()).to.be.equal('Flareon');
     })
-})*/
+})
