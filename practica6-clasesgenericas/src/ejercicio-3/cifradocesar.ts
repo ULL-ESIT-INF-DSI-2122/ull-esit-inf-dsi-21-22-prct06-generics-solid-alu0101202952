@@ -93,7 +93,7 @@ export class CifradoCesar{
             let indice2 = this.generarClave(mensaje_encriptado,clave.getCaracteres(i));
             aux_mensaje = parseInt(indice1)
             aux_clave = parseInt(indice2)
-            aux+= parseInt(((aux_mensaje + aux_clave)+26) %26 + 'A');
+            aux+= parseInt(((aux_mensaje - aux_clave)+26) %26 + 'A');
             mensaje_original = String.fromCharCode(aux);
         }
         console.log('Mensaje original: '+mensaje_original);
