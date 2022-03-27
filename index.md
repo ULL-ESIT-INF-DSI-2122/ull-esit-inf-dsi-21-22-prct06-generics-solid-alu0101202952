@@ -20,11 +20,10 @@
 
     4.3. Ejercicio 3
 
-5. Uso de 
-6. Desarrollo del informe con GitHub Pages
-7. Dificultades
-8. Conclusiones
-9. Referencias
+5. Desarrollo del informe con GitHub Pages
+6. Dificultades
+7. Conclusiones
+8. Referencias
 
 ## OBJETIVO
 El objetivo en esta práctica tendremos que resolver una serie de ejercicios de programación que nos permitirán conocer más en profundidad las clases e interfaces genéricas del lenguaje TypeScript. Además, también deberán utilizar los principios SOLID de diseño orientado a objetos.
@@ -63,116 +62,154 @@ Finalmente, se termina la estructura del proyecto creando un fichero __.gitignor
 
 Quedando de estructura final:
 
-![img](https://i.imgur.com/ebX5NCH.jpg)
+![img](https://i.imgur.com/tTRd3lC.jpg)
 
 
-## DESARROLLO DE LOS EJERCICIOS (1 y 2)
+## DESARROLLO DE LOS EJERCICIOS (1, 2 y 3)
 
-El proyecto consta de 2 ejercicios a desarrollar en TypeScript. En este apartado se explicarán cada uno de estos y el planteamiento que se utilizó.
+El proyecto consta de 3 ejercicios a desarrollar en TypeScript. En este apartado se explicarán cada uno de estos y el planteamiento que se utilizó.
 
 
 ### EJERCICIO 1
 
-En este ejercicio se quiere implementar una modificación de la práctica 3, donde se crea una estructura de clases que simulen a los pokemon, su pokedex y el combate entre dos pokemon.
+En este ejercicio se quiere implementar una modificación de la práctica 5, donde se crea una estructura de clases que simulen a los pokemon, su pokedex y el combate entre dos pokemon. En esta se pide que mediante una estructura de clases genéricas se pueda competir entre distintos mundos.
 
 Siguiendo la metodología TDD, primero se desarrolló el test en el directorio específico para este ejercicio __./test/ejercicio-1__ denotado el fichero como __ejercicio-1.spec.ts__.
 
-Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada clase será un fichero distinto __.ts__. Habrán 3 clases y por tanto 3 ficheros correspondientes. 
+Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada clase será un fichero distinto __.ts__. Por ello cada clase está contenida en un ficher .ts particular. Siendo la estructura:
 
-En el fichero __ejercicio-1.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico en el apartado __5. Uso de Coveralls__ de este informe y finalmente se realiza la documentación.
+![img](https://i.imgur.com/zfbMPL4.jpg)
 
-Quedando todos los test tal que:
+En el fichero __ejercicio-1.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico y finalmente se realiza la documentación.
 
-![img](https://i.imgur.com/vVB5ntj.jpg)
-![img](https://i.imgur.com/33CeN1q.jpg)
+La idea es crear 4 clases independientes: la clase abstracta __Fighter__, dos super clases que se ayudarán de la clase Fighter para definir el combate entre dos luchadores de distinto o mismo mundo (__Combat__) y donde se almacene el luchador/es (__Pokedex__). A su vez una super clase que se ayuda de Pokedex que será __PokedexPrinter__ que se definió siguiendo el principio SOLID de _Single responsibility principle_, ya que ahí muestra un ejemplo donde si se quiere imprimir la Pokedex pues sea una clase distinta. Finalmente por cada mundo, se tiene 4 mundos (Pokemon, Marvel, Kimetsu No Yaiba y One Piece) y para ellos se definió una clase y fichero .ts que tiene las especificaciones de cada mundo. Estas son sub clases de __Fighter__.
 
-Esto no ejecutaría nada ya que no está implementado las clases que se indican (Pokemon, Pokedex y Combat), por ello se crea en el directorio __./src/ejercicio-1__ los ficheros correspondientes, según los principio __SOLID__ un fichero por cada clase.
+Quedando todos los test para cada clase tal que:
 
-#### Fichero pokemon.ts
+![img](https://i.imgur.com/YjMddT6.jpg)
 
-Este fichero tiene la __clase Pokemon__, esta clase tiene un constructor que genera los pokemon con sus especificaciones (atributos protegidos para que en caso de herencia las clases hijas los usen). Los atributos son los siguientes:
+![img](https://i.imgur.com/SO61Uew.jpg)
 
-![img](https://i.imgur.com/d6DSGKo.jpg)
+![img](https://i.imgur.com/loXhKmh.jpg)
 
-A su vez la clase Pokemon tiene los setters y getters, que son métodos públicos para poder acceder haciendo uso de una buena práctica a estos atributos protegidos. Además, como el atributo estadísticas es un atributo con distintos sub-atributos asociados a él pues se realizó getters de estos en específico para más adelante si se quiere uno en particular que sea manejable usarlo.
+![img](https://i.imgur.com/g6mPkth.jpg)
 
-Quedando los setters y getters de la siguiente forma:
+![img](https://i.imgur.com/UBwQnxz.jpg)
 
-![img](https://i.imgur.com/zlEqH2h.jpg)
+![img](https://i.imgur.com/I7obon7.jpg)
 
-![img](https://i.imgur.com/ETjFpBV.jpg)
-
-![img](https://i.imgur.com/w2Gn8bM.jpg)
-
-Finalizando así esta clase y mostrándose así por pantalla.
-
-![img](https://i.imgur.com/lBEtioT.jpg)
-
-Se ejecuta para la documentación con ```npm run doc```. Y para ejecutar el código con ```npm start```.
-
-![img](https://i.imgur.com/wRy09ml.jpg)
-
-Finalmente, se ejecuta el test con ```npm run test```:
-
-![img](https://i.imgur.com/EuCeUKm.jpg)
-
-#### Fichero pokedex.ts
-
-Este fichero tiene la __clase Pokedex__, esta clase tiene un constructor que genera un array con los pokemons de tipo __Pokemon__ privado y así tener las especificaciones de cada Pokemon, quedando:
-
-![img](https://i.imgur.com/xuFUEcG.jpg)
-
-A su vez se implementó los setters y getters correspondientes para almacenar pokemons y devolverlos:
-
-![img](https://i.imgur.com/3yS4cXh.jpg)
+Como cada clase tiene sus métodos particulares del mundo se hace una prueba por cada una y además por los dos atributos que coge las subclases (cada mundo) que es el nombre del luchador y las estadísticas. Estos atributos serán los que heredan cada subclase. Luego cada subclase tiene su propios atributos y métodos.
 
 
-Finalmente, se ejecuta el test con ```npm run test```:
+#### Fichero Fighter
 
-![img](https://i.imgur.com/9WTCDY6.jpg)
+Este fichero tiene la __clase abstracta Fighter__, esta clase tiene un constructor que genera los luchadores con sus especificaciones (atributos protegidos para que en caso de herencia las clases hijas los usen). Los atributos son el nombre y las estadísticas. Quedando el código tal que:
+
+![img](https://i.imgur.com/EuEXWvg.jpg)
+
+Como es una clase abstracta no se necesitan pruebas. Y tampoco hay mucho que compilar.
+
+Finalizando así esta clase.
+
+
+#### Ficheros Pokemon, Marvel, Kimetsu No Yaiba y One Piece
+
+Estos ficheros corresponden a las subclases que heredan el nombre y estadísticas de la superclase __Fighter__ y tiene cada una las especificaciones de cada mundo. Ya que cada mundo tiene unas especificaciones determinadas. La clase __Pokemon__ no cambió ya que se aprovechó la que ya se desarrolló.
+
+Quedando la clase y fichero __Pokemon__:
+
+![img](https://i.imgur.com/WJxkZeA.jpg)
+
+La clase y fichero Marvel tiene a los superhéroes del mundo Marvel y tiene como atributos específicos el superpoder y la debilidad del superhéroe, esto a parte del nombre y estadísticas como se indicaron.
+
+Quedando la clase y fichero __Marvel__:
+
+![img](https://i.imgur.com/vSCZzsy.jpg)
+
+La clase y fichero Kimetsu No Yaiba tiene a los cazademonios del anime Kimetsu No Yaiba y tiene como atributo específico la respiración que es como la habilidad del cazador, pudiendo ser relacionado con elementos, esto a parte del nombre y estadísticas como se indicaron.
+
+Quedando la clase y fichero __KimetsuNoYaiba__:
+
+![img](https://i.imgur.com/WdAndru.jpg)
+
+Finalmente, la clase y fichero One Piece tiene a los piratas del anime One Piece y tiene como atributos específicos la fruta que le otorga habilidades a los piratas de la tripulación y la habilidad que tiene el pirata gracias a esta fruta o por mérito propio, esto a parte del nombre y estadísticas como se indicaron.
+
+Quedando la clase y fichero __OnePiece__:
+
+![img](https://i.imgur.com/Jy8rIQQ.jpg)
 
 
 #### Fichero combat.ts
 
-Este fichero tiene la __clase Combat__, esta clase tiene un constructor que recibe los dos pokemons que son tipo __Pokemon__ que van a luchar:
+Este fichero tiene la __clase Combat__, esta clase tiene un constructor que recibe los dos luchadores que son tipo __Fighter__ que van a luchar y por tanto puede pertenecer a cualquiera de los 4 mundos específicos:
 
-![img](https://i.imgur.com/i9dMSOQ.jpg)
+Por un lado la clase tiene un método público que se llama __getPhrase()__ que otorga frases genéricas (acorde con el mundo) a los luchadores, esto comprobando la instancia a qué clase pertenece esta, quedando de tal manera:
 
-Y luego tiene un método público denotado por __start()__ que simulará el combate entre pokemons. El planteamiento para el combate es similar al ejercicio de la práctica 3 en la que se basa. Donde se tiene las efectividades y los tipos y a partir de un cálculo se halla el daño que causa cada pokemon en la batalla. Sin embargo, se adapta a las clases y getter para conseguir los atributos con los que se trabajará y así comienza el combate.
+![img](https://i.imgur.com/lDo0zmV.jpg)
 
-Quedando el código tal que:
+Y por otro lado está el método público __start()__ el cual da comienzo al combate. Como los contrincantes pueden ser del mismo o distinto mundo las dos condiciones que se deben de dar esenciales y por cuales se entorna el código es que golpea primero el más rápido de los dos y esto es hasta que alguna de las vidas __getHP()__ llegue a 0. Por tanto si la vida es superior a 0, se mira dos casos concretos. El primero es que ambos sean del mundo __Pokemon__ ya que en el mundo pokemon se tiene en cuenta el tipo de pokemon. Y por ello la fórmula incluirá la respectiva comparativa de efectividad de cada tipo sobre el otro. El daño se redondea y se le resta a la vida. Y después del ataque cada pokemon tiene algo que decir y se invoca al método __getPhrase()__ para que digan su frase.
 
-![img](https://i.imgur.com/oMQsgZ9.jpg)
+Quedando esta parte del código tal que:
 
-![img](https://i.imgur.com/f2wCA1q.jpg)
+![img](https://i.imgur.com/tNkMDZn.jpg)
 
+![img](https://i.imgur.com/Feeth8x.jpg)
 
+El otro caso será si son de distinto o mismo mundo, todos los casos posibles menos que sean dos luchadores del mundo Pokemon. Entonces el criterio que se tomó fue la misma fórmula sin tomar la efectividad de tipo, ya que no importa, ahora importa el ataque y la defensa. Y se ejecuta los otros pasos ya nombrados anteriormente, de redondear el daño y restarlo a la vida y que los luchadores digan sus frases correspondientes.
 
-Se ejecuta para la documentación con ```npm run doc```. Y para ejecutar el código con ```npm start```.
+Quedando esta parte del código tal que:
 
-![img](https://i.imgur.com/uWxaQCH.jpg)
+![img](https://i.imgur.com/RJtdIcz.jpg)
 
-Finalmente, se ejecuta el test con ```npm run test```:
+![img](https://i.imgur.com/4tz9sg1.jpg)
 
-![img](https://i.imgur.com/f4YTJZN.jpg)
+Se ejecuta para la documentación con ```npm run doc```. Y para ejecutar el código con ```npm start``` para mostrar el combate 1 (mismo mundo Pokemon) y el combate 2 (distinto mundo Pokemon vs Marvel).
+
+![img](https://i.imgur.com/28rWlEE.jpg)
 
 
 Una vez finaliza todo el código se ejecuta el cubrimiento con ```npm run coverage```:
 
-![img](https://i.imgur.com/UK2na0M.jpg)
+![img](https://i.imgur.com/tJQH8im.jpg)
 
+![img](https://i.imgur.com/w2FQMCh.jpg)
+
+
+#### Fichero Pokedex
+
+Este fichero se cambió ya que ahora Pokedex almacena luchadores y por eso recibe de la clase abstracta __Fighter__. Y por ello se modificó:
+
+![img](https://i.imgur.com/h9SUU3S.jpg)
+
+
+#### Fichero PokedexPrinter
+
+Este fichero es un añadido ya que a nivel estético si se quiere mostrar el nombre y estadísticas del luchador se recurre a los datos guardados en la Pokedex, pero para respestar el principio SOLID _Single responsibility principle_, se creó esta nueva clase para imprimir los datos de la Pokedex mediante el método __print()__. Quedando tal que:
+
+![img](https://i.imgur.com/ZVYHk3t.jpg)
+
+
+Finalizando así todo el código del ejercicio 1, la documentación, los test y el cubrimiento con Coveralls.
 
 
 
 ### EJERCICIO 2
 
-En este ejercicio se quiere desarrollar el juego _Conecta 4_. Para su desarrollo se empleó como en el ejercicio anterior la metodología TDD y además se usó Coveralls para el cubrimiento del código y se tuvieron en cuenta los Principios __SOLID__ para que cada fichero contuviera una clase y así respectivamente.
+En este ejercicio se quiere desarrollar una plataforma de vídeo en streaming (DSIFlix). Para su desarrollo se empleó como en el ejercicio anterior la metodología TDD y además se usó Coveralls para el cubrimiento del código y se tuvieron en cuenta los Principios __SOLID__ para que cada fichero contuviera una clase y así respectivamente.
 
 Siguiendo la metodología TDD, primero se desarrolló el test en el directorio específico para este ejercicio __./test/ejercicio-2__ denotado el fichero como __ejercicio-2.spec.ts__.
 
-Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada clase será un fichero distinto __.ts__. Habrán 2 clases y por tanto 2 ficheros correspondientes. 
+Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada clase será un fichero distinto __.ts__. Por ello cada clase está contenida en un ficher .ts particular. Siendo la estructura:
+
+![img](https://i.imgur.com/2o47OJo.jpg)
 
 En el fichero __ejercicio-2.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico en el apartado __5. Uso de Coveralls__ de este informe y finalmente se realiza la documentación.
+
+
+La idea
+
+
+
 
 Quedando el test tal que:
 
