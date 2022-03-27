@@ -77,11 +77,29 @@ export class CifradoCesar{
         return mensaje_encriptado;
     }
     
+    public desencriptar(mensaje_encriptado: Mensaje, clave: Clave){
+        let mensaje_original: string = " ";
+        let aux: number = 0;
+        let aux_mensaje: number = 0;
+        let aux_clave: number = 0;
+        for(let i: number = 0; i < mensaje_encriptado.getNumeroCaracteres() && i < clave.getNumeroCaracteres(); i++){
+            let indice1 = mensaje_encriptado.getCaracteres(i);
+            let indice2 = this.generarClave(mensaje_encriptado,clave.getCaracteres(i));
+            aux_mensaje = parseInt(indice1)
+            aux_clave = parseInt(indice2)
+            aux+= parseInt(((aux_mensaje + aux_clave)+26) %26 + 'A');
+            mensaje_original = String.fromCharCode(aux);
+        }
+        console.log('Mensaje original: '+mensaje_original);
+        return mensaje_original
+    }
 }
 
 
 let mensaje1 = new Mensaje('HOLAESTOESUNAPRUEBA');
 let clave = new Clave('CLAVE');
+let mensaje_encriptado = new Mensaje('');
 let cifradocesar1 = new CifradoCesar(mensaje1, clave);
 
 cifradocesar1.encriptar(mensaje1, clave);
+cifradocesar1.desencriptar(mensaje_encriptado, clave);
