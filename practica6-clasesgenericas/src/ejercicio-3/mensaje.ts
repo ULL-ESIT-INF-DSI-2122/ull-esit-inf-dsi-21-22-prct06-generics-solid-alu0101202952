@@ -13,4 +13,12 @@ export class Mensaje{
     public getMensaje(){
         return this.mensaje;
     }
+
+    /**
+     * Getter del tamaño del mensaje
+     * @returns el tamaño
+     */
+    public getNumeroCaracteres(){
+        return this.mensaje.length;
+    }
 }
