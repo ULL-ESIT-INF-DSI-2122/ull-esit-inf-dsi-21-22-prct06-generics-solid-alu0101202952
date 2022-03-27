@@ -205,12 +205,16 @@ Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada cl
 
 En el fichero __ejercicio-2.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico en el apartado __5. Uso de Coveralls__ de este informe y finalmente se realiza la documentación.
 
-La idea es del desarrollo es tener una interfaz genérica con los métodos abstractos 
-
+La idea es del desarrollo es tener una interfaz genérica __Streamable__ con los métodos que luego se usarán para buscar vídeos en las colecciones distintas. Una clase abstracta genérica __BasicStreamableCollection__ que implementa algunos métodos sin embargo, los dedicados a la búsqueda son abstracto ya que lo lógico es que sean métodos que implementen las colecciones, ya que son búsquedas dentro de ellas. A continuación vendrán 3 superclases, __Series__, __Peliculas__ y __Documentales__ que tendrán las características respectivas a las series, películas y documentales de la plataforma. Finalmente una colección por cada super clase (__ColeccionSeries__, 
+__ColeccionPeliculas__  y __ColeccionDocumentales__), estas son subclases de la superclase abstracta __BasicStreamableCollection<T>__ donde el tipo genérico corresponde con la colección a la que haga referencia. Estas clases son las encargadas de implementar los métodos de búsqueda (de series, pelicula y documentales) según algunos requisitos. Los métodos son __getVideoByName()__, __getVideoByYear()__ y __getVideoByAuthor()__.
 
 Quedando el test tal que:
 
-![img](https://i.imgur.com/kwLHh0k.jpg)
+![img](https://i.imgur.com/nsdqA2Y.jpg)
+    
+![img](https://i.imgur.com/SPWH0kz.jpg)
+
+![img](https://i.imgur.com/iSujTtl.jpg)
 
 
 #### Fichero tablero.ts
