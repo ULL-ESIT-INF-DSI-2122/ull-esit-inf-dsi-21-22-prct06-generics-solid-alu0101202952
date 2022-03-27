@@ -203,10 +203,10 @@ Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada cl
 
 ![img](https://i.imgur.com/2o47OJo.jpg)
 
-En el fichero __ejercicio-2.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico en el apartado __5. Uso de Coveralls__ de este informe y finalmente se realiza la documentación.
+En el fichero __ejercicio-2.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico y finalmente se realiza la documentación.
 
 La idea es del desarrollo es tener una interfaz genérica __Streamable__ con los métodos que luego se usarán para buscar vídeos en las colecciones distintas. Una clase abstracta genérica __BasicStreamableCollection__ que implementa algunos métodos sin embargo, los dedicados a la búsqueda son abstracto ya que lo lógico es que sean métodos que implementen las colecciones, ya que son búsquedas dentro de ellas. A continuación vendrán 3 superclases, __Series__, __Peliculas__ y __Documentales__ que tendrán las características respectivas a las series, películas y documentales de la plataforma. Finalmente una colección por cada super clase (__ColeccionSeries__, 
-__ColeccionPeliculas__  y __ColeccionDocumentales__), estas son subclases de la superclase abstracta __BasicStreamableCollection<T>__ donde el tipo genérico corresponde con la colección a la que haga referencia. Estas clases son las encargadas de implementar los métodos de búsqueda (de series, pelicula y documentales) según algunos requisitos. Los métodos son __getVideoByName()__, __getVideoByYear()__ y __getVideoByAuthor()__.
+__ColeccionPeliculas__  y __ColeccionDocumentales__), estas son subclases de la superclase abstracta __BasicStreamableCollection T__ donde el tipo genérico corresponde con la colección a la que haga referencia. Estas clases son las encargadas de implementar los métodos de búsqueda (de series, pelicula y documentales) según algunos requisitos. Los métodos son __getVideoByName()__, __getVideoByYear()__ y __getVideoByAuthor()__.
 
 Quedando el test tal que:
 
@@ -217,101 +217,145 @@ Quedando el test tal que:
 ![img](https://i.imgur.com/iSujTtl.jpg)
 
 
-#### Fichero tablero.ts
+#### Fichero Streamable
 
-En este fichero se pretende desarrollar lo relativo a la generación del tablero de juego del Conecta 4, donde su constructor tiene dos atributos protegidos las filas y las columnas.
+En este fichero define la interfaz genérica __Streamable__ que define los métodos que realizarán la búsqueda de los distintos videos por el criterio del nombre, del año de publicación y del autor, entre otros métodos. Quedando el código tal que:
+    
+![img](https://i.imgur.com/XWgoKaI.jpg)
+    
+    
+#### Fichero BasicStreamableCollection
 
-![img](https://i.imgur.com/OpVqoqt.jpg)
-
-Luego con dichas filas y columnas se genera el tablero con un método público que genera la matriz del tablero correspondiente. 
-
-![img](https://i.imgur.com/zKElogx.jpg)
-
-Y se implementó un método push relativo al tablero ya que más adelante se necesitará llamar para insertar la fichas en el tablero.
-
-![img](https://i.imgur.com/jh1b0Is.jpg)
-
-Y a continuación se implementó los getter correspondientes a las filas y columnas para poder comprobar si una fila o columna está llena, preferiblemente columna, quedando tal que:
-
-![img](https://i.imgur.com/Na8prSF.jpg)
+En este fichero define la clase abstracta genérica __BasicStreamableCollection__ que implementa algunos métodos, sin embargo los métodos de búsqueda serán abstracto, esto se nombraron se implementan en clase más acorde con dicha función que serán las colecciones de series, películas y documentales. Quedando el código tal que:
+    
+![img](https://i.imgur.com/rvOoi56.jpg)
 
 
-Al ejecutar el código se muestra:
+#### Fichero Series, Películas y Documentales
 
-![img](https://i.imgur.com/5ZKdVu8.jpg)
+Estos ficheros están destinado a definir características propias de cada tipo de vídeo de la plataforma. El nombre, autor o director, los actores(en caso de las peliculas que es un array de string), un array de género y el año.  
 
-El test se muestra:
+Por ello las series tiene el siguiente código:
 
-![img](https://i.imgur.com/nsnzfag.jpg)
+![img](https://i.imgur.com/71nxF0y.jpg)
 
 
-#### Fichero juego.ts
+La clase películas tiene el siguiente código:
 
-En este fichero se implementa la clase Juego que hereda de Tablero ya que se requiere de él para poder establecer las reglas del juego, esa es la función de esta clase. Como constantes globales habrán dos jugadores y dos colores que se denotan los principales del juego.
+![img](https://i.imgur.com/bAveDiJ.jpg)
 
-![img](https://i.imgur.com/A4Lnyv7.jpg)
+![img](https://i.imgur.com/YYo8LTd.jpg)
 
-Y se tiene en el constructor la herencia de Tablero de sus filas y columnas y una que es tablero en caso de necesitarlo.
 
-![img](https://i.imgur.com/sANuq8e.jpg)
+Y la clase documentales tiene el siguiente código:
 
-Se tendrá como norma que las columnas no estén llenas para poder introducir fichas en ellas para ello se requiere de conocer mediante true (está llena) o false (si no lo está)
+![img](https://i.imgur.com/Riss0Wc.jpg)
 
-![img](https://i.imgur.com/cjfFnUc.jpg)
 
-El siguiente método público será __colocarPieza()__ que recibe el tablero, la columna y el jugador. Se asignará color a los jugadores y el propósito es introducir una ficha de un determinado color predeterminado en las constantes globales antes mencionadas y ponerlas en el tablero mediante el método específico que introduce la ficha (__pushFicha()__).
 
-![img](https://i.imgur.com/KXgikMh.jpg)
+#### Fichero ColeccionSeries, ColeccionPelículas y ColeccionDocumentales
 
-Lo último que se mirará es según la colocación de la ficha se irá contando cuantas fichas de ese color en distintas posiciones, pero consecutivas se pusieron. El mínimo de rondas para ganar son 8, 4 movimientos del rival y 4 tuyos para que 4 fichas sean consecutivas del mismo color y así definir un ganador. Ese es el mínimo de movimiento. La lógica que se emplea es que si en esos movimientos hay 4 fichas del mismo color y estas son consecutivas unas de otras entonces se acepta un ganador. Debido a la dificultad de planteamiento no se acabó de desarrollar el código, no obstante se dessarrolló una parte del código.
+Estos ficheros están destinado a implementar los métodos de búsqueda de vídeos según su nombre, año y autor (__getVideoByName()__, __getVideoByYear()__ y __getVideoByAuthor()__).  
 
-![img](https://i.imgur.com/kBAxd79.jpg)
+La lógica de la implementación es recibir un nombre, un año o un autor y comparar si verdaderamente está en el array de series, películas y documentales que compartan nombre, año o autor.
 
-Al ejecutar el código se muestra:
+Como en todas las colecciones es la misma lógica, se muestra el de __ColeccionSeries__:
 
-![img](https://i.imgur.com/23nzLvW.jpg)
+![img](https://i.imgur.com/8K1Vzg8.jpg)
 
-El test se muestra:
-
-![img](https://i.imgur.com/wG7zZtk.jpg)
+![img](https://i.imgur.com/Ax8Jlxd.jpg)
 
 
 Una vez finaliza todo el código se ejecuta el cubrimiento con ```npm run coverage```:
 
-![img](https://i.imgur.com/zDsaqyJ.jpg)
+![img](https://i.imgur.com/KmQiqhI.jpg)
+
+![img](https://i.imgur.com/F6lmV2S.jpg)
 
 
-## USO DE COVERALLS
+### EJERCICIO 3
 
-Para usar Coveralls se instaló la dependencia correspondiente mediante ```npm install --save-dev nyc coveralls``` con ello se añade dicha configuración en el __package.json__, añadiendo la línea __"coverage": "nyc npm test"__. Con ello al hacer el comando ```npm run coverage``` se ejecutará las pruebas test con nyc y coveralls y así no incluso necesitar hacer ```npm run test``` ya que con Coveralls se ejecutan los propios test a parte del cubrimiento.
+En este ejercicio se quiere desarrollar el Cifrado César, pasando un mensaje, una clave y un alfabeto. Para su desarrollo se empleó como en el ejercicio anterior la metodología TDD y además se usó Coveralls para el cubrimiento del código y se tuvieron en cuenta los Principios __SOLID__ para que cada fichero contuviera una clase y así respectivamente.
 
-Luego cuando se sube, el código actualizado al GitHub es necesario hacer público el repositorio para que en la página de Coveralls aparezca el repo asociado. Lo siguiente es guardar el token que se genera en un fichero __.coveralls.yml__ que se crea en la raíz del directorio de trabajo.
+Siguiendo la metodología TDD, primero se desarrolló el test en el directorio específico para este ejercicio __./test/ejercicio-3__ denotado el fichero como __ejercicio-3.spec.ts__.
 
-![img](https://i.imgur.com/pI4uEh7.jpg)
+Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada clase será un fichero distinto __.ts__. Por ello cada clase está contenida en un ficher .ts particular. Siendo la estructura:
 
-Y para mejorar se añade en el package.json una línea para ejecutar el cubrimiento de forma más completa. Con __"coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output"__
+![img](https://i.imgur.com/YLs1vvf.jpg)
 
-Este cubrimiento da a lugar al siguiente de esta práctica:
+En el fichero __ejercicio-3.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico y finalmente se realiza la documentación.
 
-![img](https://i.imgur.com/zDsaqyJ.jpg)
+La idea es del desarrollo es tener 3 clases independientes, dos de ellas tienen las especificaciones de los mensajes (class __Mensaje__) y las de la clave (class __Clave__). Y luego una clase que tenga el Cifrado César, para el cifrado que necesita la clave se basa también en el Cifrado Vigenere. La clase __CifradoCesar__ recibe el mensaje y la clave, tiene un atributo privado alfabeto, los getter determinados, el método público __generarClave()__ que repetirá la clave tantas veces como el tamaño del mensaje. Finalmente la clase tendrá la encriptacion (__encriptar()__) del mensaje y la desencriptación (__desencriptar()__).
 
-Y al rato estaría enganchado el repositorio a la web de Coveralls.
+Quedando el test tal que:
+
+![img](https://i.imgur.com/6idDE4d.jpg)
+    
+![img](https://i.imgur.com/JWlkEDX.jpg)
+
+
+#### Fichero Mensaje
+
+En este fichero define la clase __Mensaje__ que define los métodos que devuelven el mensaje, el tamaño del mensaje y se busca un caracter pasándole el índice, este último implementa el método _charAt()_ de los tipo String. Quedando el código tal que:
+    
+![img](https://i.imgur.com/BEh13qs.jpg)
+
+
+#### Fichero Clave
+
+En este fichero define la clase __Clave__ que define los métodos que devuelven la clave, el tamaño de la clave y se busca un caracter pasándole el índice, este último implementa el método _charAt()_ de los tipo String. Quedando el código tal que:
+    
+![img](https://i.imgur.com/P4MiiUl.jpg)
+
+
+
+#### Fichero CifradoCesar
+
+En este fichero define la clase __CifradoCesar__ que define los métodos que devuelven el mensaje, la clave y el alfabeto, además implementa la función __generarClave()__ que repite la clave tantas veces como el tamaño del mensaje. Finalmente la clase tendrá la encriptacion (__encriptar()__) del mensaje y la desencriptación (__desencriptar()__). Quedando el código tal que:
+    
+![img](https://i.imgur.com/V4HESP9.jpg)
+
+![img](https://i.imgur.com/CT30FTr.jpg)
+
+Para encriptar() se tuvo que hacer varias conversiones de tipos para trabajar con la clave y cada caracter, y se sigue la lógica de que para encriptar al mensaje se le suma la clave módulo 26 que es el alfabeto y se suma la A para convertirlo en el alfabeto ASCII que sea en mayúsculas de lo contrario no se reconocería. Quedando el código tal que:
+
+![img](https://i.imgur.com/UCRnSIv.jpg)
+
+
+Para desencriptar es la operación inversa, se le tiene que por ello a la lógica anterior. Se resta y para evitar números negativos se suma por la cantidad de letras del abecedario. Quedando el código tal que:
+
+![img](https://i.imgur.com/nDZqzpN.jpg)
+
+
+Una vez finaliza todo el código se ejecuta el cubrimiento con ```npm run coverage```:
+
+![img](https://i.imgur.com/8Q8YXeS.jpg)
+
+
+> SIN EMBARGO NO ENCRIPTA Y DESENCRIPTA BIEN, MUESTRA EN BLANCO
+
+Quedando el cubrimiento total tal que:
+
+![img](https://i.imgur.com/cMMmtmQ.jpg)
+
 
 
 ## DESARROLLO DEL INFORME CON GITHUB PAGES
 
 Siguiendo los pasos del informe 1 para crear la GitHub Pages así se prosiguió. Además se dejó el mismo tema para que a nivel visual lleven el mismo formato.
 
+
+
 ## DIFICULTADES
 
-En esta práctica las dificultades que se presentaron fue en el planteamiento de cómo realizar el ejercicio 2 "Conecta 4" en específico la decisión del ganador, ya que a nivel de clases se tiene que asociar colores con jugadores y estos definirse como ganador a las 4 primeras fichas consecutivas del mismo color. Además hubo error con Coveralls ya que por mucho que refresque no aparece el cubrimiento que se le realizó al código mostrándose:
+En esta práctica las dificultades que se presentaron fue en la ejecución del cifradocesar.ts ya que no muestra ni el encriptado y desencriptado del mensaje, mostrando:
 
-![img](https://i.imgur.com/NSER302.jpg)
+![img](https://i.imgur.com/zOuGHM3.jpg)
 
 
 ## CONCLUSIONES
 
-Resultó ser una práctica donde se pone en práctica los conocimientos sobre las clases y herencias. Además se quisó empezar a plantear desde el punto de implementar los principios SOLID y el uso de la herramienta Coveralls. Realizando pruebas mediante metodología TDD con las herramientas de Mocha y Chai y la generación de documentación con Typedoc.
+Resultó ser una práctica donde se pone en práctica los conocimientos sobre las clases y herencias genéricas. Poniendo en práctica los ya principios SOLID y el uso de la herramienta Coveralls. Realizando pruebas mediante metodología TDD con las herramientas de Mocha y Chai y la generación de documentación con Typedoc.
 
 
 ## REFERENCIAS
