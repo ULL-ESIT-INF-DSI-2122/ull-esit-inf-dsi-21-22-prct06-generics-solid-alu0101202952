@@ -8,6 +8,7 @@ import { Mensaje } from "./mensaje";
  * @param clave con la que se encripta el mensaje
  */
 export class CifradoCesar{
+    private alfabeto: 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
     constructor(protected mensaje: Mensaje, protected clave: Clave){}
 
     /**
@@ -26,5 +27,9 @@ export class CifradoCesar{
         return this.clave;
     }
 
+
+    public cifrar(mensaje: Mensaje, clave: Clave){
+        
+    }
     
 }
