@@ -16,6 +16,9 @@ describe('Mensaje', () => {
   it('mensaje1.getNumeroCaracteres() returns tamaño del mensaje', () => {
     return expect(mensaje1.getNumeroCaracteres()).to.be.equal(19);
   })
+  it('mensaje1.getCaracteres() returns caracteres del mensaje', () => {
+    return expect(mensaje1.getCaracteres(3)).to.be.equal('A');
+  })
 })
 
 describe('Clave', () => {
@@ -24,6 +27,9 @@ describe('Clave', () => {
   })
   it('clave.getNumeroCaracteres() returns tamaño de la clave', () => {
     return expect(clave.getNumeroCaracteres()).to.be.equal(5);
+  })
+  it('clave.getCaracteres() returns caracteres de la clave', () => {
+    return expect(clave.getCaracteres(3)).to.be.equal('V');
   })
 })
 
