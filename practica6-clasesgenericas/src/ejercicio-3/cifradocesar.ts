@@ -41,7 +41,7 @@ export class CifradoCesar{
      * @param clave a repetir
      * @returns clave repetida
      */
-    public generarClave(mensaje: Mensaje, clave: String){
+    public generarClave(mensaje: Mensaje, clave: string){
         for(let i: number = 0; i < mensaje.getNumeroCaracteres(); i++){
             if(mensaje.getNumeroCaracteres() == i){
                 i = 0;
@@ -54,6 +54,12 @@ export class CifradoCesar{
         return clave;
     }
 
+    /**
+     * Método encriptar para encriptar el mensaje 
+     * @param mensaje a encriptar
+     * @param clave con la que encriptar
+     * @returns mensaje encriptado
+     */
     public encriptar(mensaje: Mensaje, clave: Clave){
         let mensaje_encriptado: string = " ";
         let aux: number = 0;
@@ -61,12 +67,11 @@ export class CifradoCesar{
         let aux_clave: number = 0;
         for(let i: number = 0; i < mensaje.getNumeroCaracteres(); i++){
             let indice1 = mensaje.getCaracteres(i);
-            let indice2 = clave.getCaracteres(i);
+            let indice2 = this.generarClave(mensaje,clave.getCaracteres(i));
             aux_mensaje = parseInt(indice1)
             aux_clave = parseInt(indice2)
             aux = parseInt(mensaje_encriptado)
             aux+= parseInt((aux_mensaje + aux_clave) %26 + 'A');
-            mensaje_encriptado += String.fromCharCode(aux);
         }
         console.log('Mensaje encriptado: '+mensaje_encriptado);
         return mensaje_encriptado;
