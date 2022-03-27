@@ -49,4 +49,7 @@ describe('Cifrado César', () => {
   it('cifradocesar1.encriptar() returns mensaje encriptado', () => {
     return expect(cifradocesar1.encriptar(mensaje1, clave)).to.be.equal(' ');
   })
+  it('cifradocesar1.desencriptar() returns mensaje desencriptado', () => {
+    return expect(cifradocesar1.desencriptar(mensaje1, clave)).to.be.equal(' ');
+  })
 })
