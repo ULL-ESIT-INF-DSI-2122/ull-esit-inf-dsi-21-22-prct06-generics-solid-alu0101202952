@@ -29,9 +29,9 @@ describe('Clave', () => {
 
 describe('Cifrado César', () => {
   it('cifradocesar1.getCifrado() returns mensaje a encriptar', () => {
-    return expect(cifradocesar1.getMensaje()).to.be.equal('HOLAESTOESUNAPRUEBA');
+    return expect(cifradocesar1.getMensaje()).to.be.equal(Object (mensaje1));
   })
   it('cifradocesar1.getClave() returns clave con la que encriptar', () => {
-    return expect(cifradocesar1.getClave()).to.be.equal('CLAVE');
+    return expect(cifradocesar1.getClave()).to.be.equal(clave);
   })
 })
