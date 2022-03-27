@@ -363,6 +363,6 @@ Resultó ser una práctica donde se pone en práctica los conocimientos sobre la
 - [Introducción a Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 - [GitHub Pages](https://lab.github.com/githubtraining/github-pages)
 - [Essential TypeScript 4: From Beginner to Pro](https://www.oreilly.com/library/view/essential-typescript-4/9781484270110/html/Part_1.xhtml)
-- [Coveralls](https://coveralls.io/)# Informe Práctica Práctica 5: Objetos, clases e interfaces
+- [Coveralls](https://coveralls.io/)
 
 
