@@ -205,10 +205,7 @@ Se quiso comenzar el ejercicio desarrollando los principios SOLID, donde cada cl
 
 En el fichero __ejercicio-2.spec.ts__ se alojan todas las pruebas, donde cada _describe_ corresponde a una clase y se importaron por tanto en las pruebas. Realizando las pruebas mediante TDD, primero se desarrolló el test para un método, luego su código, se comprobó su funcionamiento, se realiza la cobertura con Coveralls como indico en el apartado __5. Uso de Coveralls__ de este informe y finalmente se realiza la documentación.
 
-
-La idea
-
-
+La idea es del desarrollo es tener una interfaz genérica con los métodos abstractos 
 
 
 Quedando el test tal que:
