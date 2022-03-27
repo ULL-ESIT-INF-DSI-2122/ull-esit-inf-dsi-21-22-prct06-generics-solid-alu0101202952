@@ -21,4 +21,13 @@ export class Mensaje{
     public getNumeroCaracteres(){
         return this.mensaje.length;
     }
+
+    /**
+     * Getter caracteres uno a uno del mensaje
+     * @returns caracteres
+     */
+     public getCaracteres(indice: number){
+        return this.mensaje.charAt(indice);
+    }
+
 }

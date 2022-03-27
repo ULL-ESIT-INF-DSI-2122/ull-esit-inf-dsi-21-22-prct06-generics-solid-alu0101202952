@@ -21,4 +21,12 @@
     public getNumeroCaracteres(){
         return this.clave.length;
     }
+
+    /**
+     * Getter caracteres uno a uno de la clave
+     * @returns caracteres
+     */
+    public getCaracteres(indice: number){
+        return this.clave.charAt(indice);
+    }
 }

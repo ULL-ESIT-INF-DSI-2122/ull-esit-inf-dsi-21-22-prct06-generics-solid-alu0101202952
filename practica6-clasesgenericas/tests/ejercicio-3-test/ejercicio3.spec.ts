@@ -34,7 +34,10 @@ describe('Cifrado César', () => {
   it('cifradocesar1.getClave() returns clave con la que encriptar', () => {
     return expect(cifradocesar1.getClave()).to.be.equal(clave);
   })
-  it('cifradocesar1.encriptar() returns mensaje encriptado', () => {
-    return expect(cifradocesar1.encriptar(mensaje1, clave)).to.be.equal(undefined);
+  it('cifradocesar1.getAlfabeto() returns alfabeto', () => {
+    return expect(cifradocesar1.getAlfabeto()).to.be.equal(undefined);
+  })
+  it('cifradocesar1.generarClave() returns clave repetida', () => {
+    return expect(cifradocesar1.generarClave(mensaje1, 'CLAVE')).to.be.equal('CLAVECLAVE');
   })
 })
