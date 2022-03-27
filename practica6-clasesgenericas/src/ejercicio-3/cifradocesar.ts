@@ -77,6 +77,12 @@ export class CifradoCesar{
         return mensaje_encriptado;
     }
     
+    /**
+     * Método desencriptar para deseencriptar el mensaje 
+     * @param mensaje_encriptado a desencriptar
+     * @param clave con la que se desencripta
+     * @returns mensaje original
+     */
     public desencriptar(mensaje_encriptado: Mensaje, clave: Clave){
         let mensaje_original: string = " ";
         let aux: number = 0;
