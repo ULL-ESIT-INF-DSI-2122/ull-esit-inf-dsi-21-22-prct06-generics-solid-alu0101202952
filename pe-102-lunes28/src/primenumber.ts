@@ -1,10 +1,11 @@
+
 /**
  * PE 102- LUNES 28 DE MARZO 2022
  * Andrea Calero Caro
  * @class PrimeNumber con tiene las especificaciones y búsqueda de números primos
  * @private @param prime_number que es un array de números
  */
-export class PrimeNumber{
+export class PrimeNumber {
     private prime_number: number[] = []
 
     /**
@@ -88,6 +89,8 @@ export class PrimeNumber{
         })
         return aux
     }
+
+    
 }
 
 let primo1 = PrimeNumber.getPrimeInstance();
