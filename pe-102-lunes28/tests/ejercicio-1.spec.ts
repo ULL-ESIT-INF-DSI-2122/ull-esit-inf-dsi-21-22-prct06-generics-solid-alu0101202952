@@ -20,4 +20,7 @@ describe('Prime Number', () => {
   it('primenumber.getNPrimeNumber() devuelva los n primeros números primos', () => {
     return expect(primenumber.getNPrimeNumber(2)).to.be.equal(undefined);
   })
+  it('primenumber.getNToMPrime() devuelva los n a m números primos dentro de ese rango', () => {
+    return expect(primenumber.getNToMPrime(2,4)).to.be.equal(undefined);
+  })
 });
