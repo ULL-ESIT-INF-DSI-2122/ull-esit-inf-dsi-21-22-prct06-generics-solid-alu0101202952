@@ -31,7 +31,10 @@ export class PrimeNumber{
         return PrimeNumber.primenumber;
     }
 
-
+    /**
+     * Método público que retorna el número primo 
+     * @returns ela instancia llamando al número primo
+     */
     public getPrimeNumber() {
         return PrimeNumber.primenumber.prime_number;
     }
