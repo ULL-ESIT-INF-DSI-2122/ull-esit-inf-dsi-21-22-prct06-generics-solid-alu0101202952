@@ -19,4 +19,15 @@ export class PrimeNumber{
     private constructor(){
         this.prime_number = [];
     }
+
+    /**
+     * Método público que retorna la instancia del primo
+     * @returns la instancia privada del número primo
+     */
+    public static getPrimeInstance(): PrimeNumber {
+        if (!PrimeNumber.primenumber) {
+            PrimeNumber.primenumber = new PrimeNumber();
+        }
+        return PrimeNumber.primenumber;
+      }
 }
