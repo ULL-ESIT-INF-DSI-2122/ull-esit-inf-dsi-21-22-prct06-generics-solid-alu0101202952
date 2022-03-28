@@ -4,7 +4,7 @@ import {PrimeNumber} from '../src/primenumber';
 
 let primenumber = new PrimeNumber.getPrimeInstance();
 
-describe('Prime Number, com', () => {
+describe('Prime Number', () => {
   it('primenumber.getPrimeInstance() returns la instancia', () => {
     return expect(primenumber.getPrimeInstance()).to.be.equal(primenumber);
   })
@@ -13,5 +13,8 @@ describe('Prime Number, com', () => {
   })
   it('primenumber.setPrimeNumber() añade un número primo', () => {
     return expect(primenumber.getPrimeNumber(2)).to.be.equal(undefined);
+  })
+  it('primenumber.getNPrimeNumber() devuelva los n primeros números primos', () => {
+    return expect(primenumber.getNPrimeNumber(2)).to.be.equal(undefined);
   })
 });
