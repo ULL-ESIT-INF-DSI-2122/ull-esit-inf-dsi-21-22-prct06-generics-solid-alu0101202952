@@ -38,4 +38,8 @@ export class PrimeNumber{
     public getPrimeNumber() {
         return PrimeNumber.primenumber.prime_number;
     }
+
+    public setPrimeNumber(nuevo_primo: number) {
+        PrimeNumber.primenumber.prime_number.push(nuevo_primo);
+    }
 }

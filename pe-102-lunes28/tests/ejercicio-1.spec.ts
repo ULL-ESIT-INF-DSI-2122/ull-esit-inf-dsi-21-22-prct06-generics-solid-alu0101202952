@@ -1,9 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
 import {PrimeNumber} from '../src/primenumber';
-setCapacity(capacity: number) {
-  KnapsackInstance.knapsackInstance.capacity = capacity;
-}
+
 let primenumber = new PrimeNumber.getPrimeInstance();
 
 describe('Prime Number, com', () => {
