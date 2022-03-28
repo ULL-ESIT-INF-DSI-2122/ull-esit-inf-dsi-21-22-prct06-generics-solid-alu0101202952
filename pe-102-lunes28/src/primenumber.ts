@@ -5,7 +5,7 @@
  * @private @param prime_number que es un array de números
  */
 export class PrimeNumber{
-    private prime_number: number[] = [2, 3, 5, 7, 11, 13, 17, 19]
+    private prime_number: number[] = []
 
     /**
      * 1º @static primenumber atributo privado estático cuyo tipo es la propia clase PrimeNumber
@@ -51,8 +51,11 @@ export class PrimeNumber{
      * Método público setter para añadir un nuevo número primo
      * @param nuevo_primo a añadir
      */
-    public setPrimeNumber(nuevo_primo: number) {
-        PrimeNumber.primenumber.prime_number.push(nuevo_primo);
+    public setPrimeNumber(nuevo_primo: number[]) {
+        let aux: number [] = []
+        for(let i: number = 0; i < nuevo_primo.length; i++){
+            aux.push(PrimeNumber.primenumber.prime_number.push(nuevo_primo[i]))
+        }
     }
 
     /**
@@ -73,9 +76,23 @@ export class PrimeNumber{
      * @returns los primos comprendidos entre esos rangos
      */
     public getNToMPrime(indice1: number, indice2: number){
+        let aux: number[] = []
         if (indice2 >= PrimeNumber.primenumber.getPrimeLenght() || indice1 <= PrimeNumber.primenumber.getPrimeLenght()) {
             return undefined;
         }
-        return PrimeNumber.primenumber.prime_number[indice2-indice1];
+        for(let i: number = 0 ; i < PrimeNumber.primenumber.getPrimeLenght(); i++){
+            aux.push(PrimeNumber.primenumber.prime_number[i]);
+        }
+        aux.forEach(elemento =>{
+            console.log(aux[elemento])
+        })
+        return aux
     }
 }
+
+let primo1 = PrimeNumber.getPrimeInstance();
+console.log('Vacío: '+primo1.getPrimeNumber());
+console.log(primo1.setPrimeNumber([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]));
+console.log('Números primos: ['+primo1.getPrimeNumber()+']');
+console.log('\nN primero números primos(índice 1): '+primo1.getNPrimeNumber(3));
+console.log('\nNúmeros primos de n hasta m: '+primo1.getNToMPrime(3,6));

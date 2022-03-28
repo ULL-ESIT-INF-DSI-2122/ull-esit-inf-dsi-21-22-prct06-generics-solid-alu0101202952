@@ -9,16 +9,16 @@ describe('Prime Number', () => {
     return expect(primenumber).to.be.equal(primenumber);
   })
   it('primenumber.getPrimeNumber() returns los números primos', () => {
-    return expect(primenumber.getPrimeNumber()).to.be.equal([]);
+    return expect(primenumber.getPrimeNumber()).to.be.equal([ 2, 3, 5 ]);
   })
   it('primenumber.getPrimeLenght() returns tamaño del array de primos', () => {
-    return expect(primenumber.getPrimeLenght()).to.be.equal(0);
+    return expect(primenumber.getPrimeLenght()).to.be.equal(3);
   })
   it('primenumber.setPrimeNumber() añade un número primo', () => {
-    return expect(primenumber.setPrimeNumber(2)).to.be.equal(undefined);
+    return expect(primenumber.setPrimeNumber([2,3])).to.be.equal(undefined);
   })
   it('primenumber.getNPrimeNumber() devuelva los n primeros números primos', () => {
-    return expect(primenumber.getNPrimeNumber(2)).to.be.equal(undefined);
+    return expect(primenumber.getNPrimeNumber(2)).to.be.equal(5);
   })
   it('primenumber.getNToMPrime() devuelva los n a m números primos dentro de ese rango', () => {
     return expect(primenumber.getNToMPrime(2,4)).to.be.equal(undefined);
