@@ -11,6 +11,9 @@ describe('Prime Number', () => {
   it('primenumber.getPrimeNumber() returns los números primos', () => {
     return expect(primenumber.getPrimeNumber()).to.be.equal(undefined);
   })
+  it('primenumber.getPrimeLenght() returns tamaño del array de primos', () => {
+    return expect(primenumber.getPrimeLenght()).to.be.equal(undefined);
+  })
   it('primenumber.setPrimeNumber() añade un número primo', () => {
     return expect(primenumber.getPrimeNumber(2)).to.be.equal(undefined);
   })
