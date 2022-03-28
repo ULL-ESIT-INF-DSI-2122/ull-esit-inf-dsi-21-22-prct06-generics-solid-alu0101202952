@@ -40,10 +40,29 @@ export class PrimeNumber{
     }
 
     /**
+     * Método público que retorna el número primo 
+     * @returns ela instancia llamando al número primo
+     */
+    public getPrimeLenght() {
+        return PrimeNumber.primenumber.prime_number.length;
+    }
+
+    /**
      * Método público setter para añadir un nuevo número primo
      * @param nuevo_primo a añadir
      */
     public setPrimeNumber(nuevo_primo: number) {
         PrimeNumber.primenumber.prime_number.push(nuevo_primo);
+    }
+
+    /**
+     * Método público que retorna el número primo 
+     * @returns ela instancia llamando al número primo
+     */
+    public getNPrimeNumber(indice: number) {
+        if (indice >= PrimeNumber.primenumber.getPrimeLenght()) {
+            return undefined;
+        }
+        return PrimeNumber.primenumber.prime_number[indice];
     }
 }
