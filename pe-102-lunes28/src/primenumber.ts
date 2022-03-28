@@ -5,7 +5,7 @@
  * @private @param prime_number que es un array de números
  */
 export class PrimeNumber{
-    private prime_number: number[] = []
+    private prime_number: number[] = [2, 3, 5, 7, 11, 13, 17, 19]
 
     /**
      * 1º @static primenumber atributo privado estático cuyo tipo es la propia clase PrimeNumber
@@ -64,5 +64,18 @@ export class PrimeNumber{
             return undefined;
         }
         return PrimeNumber.primenumber.prime_number[indice];
+    }
+
+    /**
+     * Apartado 2: Método que devuelve los primos entre un rango de indice1 a indice2
+     * @param indice1 (m) indice superior
+     * @param indice2 (n) índice inferior
+     * @returns los primos comprendidos entre esos rangos
+     */
+    public getNToMPrime(indice1: number, indice2: number){
+        if (indice2 >= PrimeNumber.primenumber.getPrimeLenght() || indice1 <= PrimeNumber.primenumber.getPrimeLenght()) {
+            return undefined;
+        }
+        return PrimeNumber.primenumber.prime_number[indice2-indice1];
     }
 }

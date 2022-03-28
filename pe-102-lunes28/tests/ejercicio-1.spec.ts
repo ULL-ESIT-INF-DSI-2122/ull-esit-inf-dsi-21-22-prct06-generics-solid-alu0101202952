@@ -2,20 +2,20 @@ import 'mocha';
 import {expect} from 'chai';
 import {PrimeNumber} from '../src/primenumber';
 
-let primenumber = new PrimeNumber.getPrimeInstance();
+let primenumber = PrimeNumber.getPrimeInstance();
 
 describe('Prime Number', () => {
   it('primenumber.getPrimeInstance() returns la instancia', () => {
-    return expect(primenumber.getPrimeInstance()).to.be.equal(primenumber);
+    return expect(primenumber).to.be.equal(primenumber);
   })
   it('primenumber.getPrimeNumber() returns los números primos', () => {
-    return expect(primenumber.getPrimeNumber()).to.be.equal(undefined);
+    return expect(primenumber.getPrimeNumber()).to.be.equal([]);
   })
   it('primenumber.getPrimeLenght() returns tamaño del array de primos', () => {
-    return expect(primenumber.getPrimeLenght()).to.be.equal(undefined);
+    return expect(primenumber.getPrimeLenght()).to.be.equal(0);
   })
   it('primenumber.setPrimeNumber() añade un número primo', () => {
-    return expect(primenumber.getPrimeNumber(2)).to.be.equal(undefined);
+    return expect(primenumber.setPrimeNumber(2)).to.be.equal(undefined);
   })
   it('primenumber.getNPrimeNumber() devuelva los n primeros números primos', () => {
     return expect(primenumber.getNPrimeNumber(2)).to.be.equal(undefined);
