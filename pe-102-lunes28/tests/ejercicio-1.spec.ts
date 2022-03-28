@@ -2,7 +2,7 @@ import 'mocha';
 import {expect} from 'chai';
 import {PrimeNumber} from '../src/primenumber';
 
-let primenumber = new PrimeNumber([130, 60, 65, 65]);
+let primenumber = new PrimeNumber.getPrimeInstance();
 
 describe('Prime Number, com', () => {
   it('primenumber.getPrimeInstance() returns la instancia', () => {

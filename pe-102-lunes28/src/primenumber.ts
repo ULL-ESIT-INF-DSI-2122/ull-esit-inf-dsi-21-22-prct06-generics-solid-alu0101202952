@@ -21,7 +21,7 @@ export class PrimeNumber{
     }
 
     /**
-     * Método público que retorna la instancia del primo
+     * 3º Método público que retorna la instancia del primo
      * @returns la instancia privada del número primo
      */
     public static getPrimeInstance(): PrimeNumber {
@@ -29,5 +29,10 @@ export class PrimeNumber{
             PrimeNumber.primenumber = new PrimeNumber();
         }
         return PrimeNumber.primenumber;
-      }
+    }
+
+
+    public getPrimeNumber() {
+        return PrimeNumber.primenumber.prime_number;
+    }
 }
