@@ -39,6 +39,10 @@ export class PrimeNumber{
         return PrimeNumber.primenumber.prime_number;
     }
 
+    /**
+     * Método público setter para añadir un nuevo número primo
+     * @param nuevo_primo a añadir
+     */
     public setPrimeNumber(nuevo_primo: number) {
         PrimeNumber.primenumber.prime_number.push(nuevo_primo);
     }
